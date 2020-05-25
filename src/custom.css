@@ -1,0 +1,44 @@
+/* Provide sufficient contrast against white background */
+a {
+  color: #0366d6;
+}
+
+code {
+  color: #E01A76;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+/*
+  .logo
+*/
+.logo {
+  width: 60px;
+  height: 60px;
+}
+.logo-menu {
+  width: 20px;
+  height: 20px;
+}
+.sns-icon{
+  width: 40px;
+  height: 40px;
+}
+/*
+  .visibility
+*/
+.visibility-on{
+  visibility: visible;
+}
+.visibility-off{
+  visibility: hidden;
+}
