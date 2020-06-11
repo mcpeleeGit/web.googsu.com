@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\public",
+    "\\src",
+    "\\src\\components",
+    "\\src\\features",
+    "\\src\\features\\counter"
+  ],
+  "SelectedNode": "\\src\\features\\counter\\Counter.js",
+  "PreviewInSolutionExplorer": false
+}
