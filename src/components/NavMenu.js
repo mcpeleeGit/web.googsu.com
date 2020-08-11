@@ -39,11 +39,10 @@ export class NavMenu extends Component {
       )  
     const LogOut = () => (
       <NavDropdown title="Account" id="my-dropdown">
-        <NavDropdown.Item eventKey="4.1">What is ReBoPAW?</NavDropdown.Item>
-        <NavDropdown.Item eventKey="4.2">Achitecture</NavDropdown.Item>
-        <NavDropdown.Item eventKey="4.3" href="/board-list">Board</NavDropdown.Item>
+        <NavDropdown.Item eventKey="5.1" href="/atodo">AToDo</NavDropdown.Item>
+        <NavDropdown.Item eventKey="5.3" href="/board-list">Board</NavDropdown.Item>
         <NavDropdown.Divider />
-        <NavDropdown.Item eventKey="4.4" onClick={this.bindClick.bind(this, 'LogOut')}>LogOut</NavDropdown.Item>
+        <NavDropdown.Item eventKey="5.4" onClick={this.bindClick.bind(this, 'LogOut')}>LogOut</NavDropdown.Item>
       </NavDropdown>    
       )        
 
@@ -66,8 +65,8 @@ export class NavMenu extends Component {
                 </NavItem>
                 <NavDropdown title="▤ReBoPAW" id="nav-dropdown">
                   <NavDropdown.Item eventKey="4.1" href="/what-is-rebopaw">What is ReBoPAW?</NavDropdown.Item>
-                  <NavDropdown.Item eventKey="4.2">Achitecture</NavDropdown.Item>
-                  <NavDropdown.Item eventKey="4.3">Tutorial</NavDropdown.Item>
+                  <NavDropdown.Item eventKey="4.2" href="/achitecture">Achitecture</NavDropdown.Item>
+                  <NavDropdown.Item eventKey="4.3" href="/tutorial">Tutorial</NavDropdown.Item>
                   <NavDropdown.Divider />
                   <NavDropdown.Item eventKey="4.4" href="https://github.com/mcpeleeGit/onlyPHP" target="_blank">DownLoad</NavDropdown.Item>
                 </NavDropdown>                
