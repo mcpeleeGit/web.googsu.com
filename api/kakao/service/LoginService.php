@@ -9,16 +9,9 @@ class LoginService extends service {
     public function loginCallBack($LoginCallBackRequestDTO){
         $KakaoAPIService = new KakaoAPIService();
         $KakaoAPIService->getToken();  
-        $_SESSION["loginProfile"] = $KakaoAPIService->getProfile();  
-
-        $protocol = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https://" : "http://");
-        $this->Redirect($protocol.$_SERVER['HTTP_HOST']."/", false);  
+        $KakaoAPIService = new KakaoAPIService("JSON");
+        $KakaoAPIService->getProfile();  
     }
 
-    public function Redirect($url, $permanent = false)
-    {
-        header('Location: ' . $url, true, $permanent ? 301 : 302);
-        exit(0);
-    }
 }
 ?>
