@@ -6,9 +6,8 @@ require('api/kakao/dto/LoginCallBackRequestDTO.php');
 class loginController {
 
     public function loginLink(){
-        $KakaoAPIService = new KakaoAPIService();
-        header( "Content-Type:application/json;charset=UTF-8" );
-        echo json_encode(array('result_code'=>200, 'result'=>$KakaoAPIService->getKakaoLoginLink()));               
+        $KakaoAPIService = new KakaoAPIService("JSON");
+        $KakaoAPIService->getKakaoLoginLink();               
     }
 
     public function defaultMethod(){

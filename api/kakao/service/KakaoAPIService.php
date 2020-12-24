@@ -7,8 +7,9 @@ class KakaoAPIService
     protected $CLIENT_SECRET;
     protected $REDIRECT_URI;
     protected $LOGOUT_REDIRECT_URI;
+    protected $RETURN_TYPE;
 
-    public function __construct()
+    public function __construct($return_type="")
     {   //★ 수정 할 것
         $this->JAVASCRIPT_KEY = "2d68640b56d986af5c8a48505c7c8c71"; // https://developers.kakao.com > 내 애플리케이션 > 앱 설정 > 요약 정보
         $this->REST_API_KEY   = "4408b5bb51bdf4c89879e933556a21e8"; // https://developers.kakao.com > 내 애플리케이션 > 앱 설정 > 요약 정보
@@ -18,20 +19,33 @@ class KakaoAPIService
         $protocol = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https://" : "http://");
         $this->REDIRECT_URI          = urlencode($protocol . $_SERVER['HTTP_HOST'] . "/PHPSimplePack.php"); // 내 애플리케이션 > 제품 설정 > 카카오 로그인
         $this->LOGOUT_REDIRECT_URI   = urlencode($protocol . $_SERVER['HTTP_HOST'] . "/PHPSimplePack.php"); // 내 애플리케이션 > 제품 설정 > 카카오 로그인 > 고급 > Logout Redirect URI
-
+        $this->RETURN_TYPE           = $return_type;
         if (session_status() == PHP_SESSION_NONE) {
             session_start();
         }
     }
 
+    private function returnType($return_string){
+        if($this->RETURN_TYPE == ""){
+            echo($return_string);
+        }
+        else if($this->RETURN_TYPE == "JSON"){
+            header( "Content-Type:application/json;charset=UTF-8" );
+            echo json_encode(array('result_code'=>200, 'result'=>$return_string));               
+        }
+        else{
+            return $return_string;
+        }
+    }
+
     public function getKakaoLoginLink()
     {
-        echo ("https://kauth.kakao.com/oauth/authorize?client_id=" . $this->REST_API_KEY . "&redirect_uri=" . $this->REDIRECT_URI . "&response_type=code&state=accessToken");
+        return $this->returnType("https://kauth.kakao.com/oauth/authorize?client_id=" . $this->REST_API_KEY . "&redirect_uri=" . $this->REDIRECT_URI . "&response_type=code&state=accessToken");
     }
 
     public function getAuthorizeLink($scope)
     {
-        echo ("https://kauth.kakao.com/oauth/authorize?client_id=" . $this->REST_API_KEY . "&redirect_uri=" . $this->REDIRECT_URI . "&response_type=code&state=accessAgree&scope=" . $scope);
+        return $this->returnType("https://kauth.kakao.com/oauth/authorize?client_id=" . $this->REST_API_KEY . "&redirect_uri=" . $this->REDIRECT_URI . "&response_type=code&state=accessAgree&scope=" . $scope);
     }
 
     public function getToken()
