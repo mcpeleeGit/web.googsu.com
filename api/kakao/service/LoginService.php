@@ -7,8 +7,9 @@ class LoginService extends service {
     }    
 
     public function loginCallBack($LoginCallBackRequestDTO){
-        $KakaoAPIService = new KakaoAPIService();
+        $KakaoAPIService = new KakaoAPIService("NONE");
         $KakaoAPIService->getToken();  
+        
         $KakaoAPIService = new KakaoAPIService("JSON");
         $KakaoAPIService->getProfile();  
     }

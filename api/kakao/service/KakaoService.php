@@ -38,7 +38,10 @@ class KakaoService
         else if($this->RETURN_TYPE=="ECHO"){
             echo $response;  
             return $response;         
-        }        
+        }       
+        else if($this->RETURN_TYPE=="NONE"){
+      
+        }            
     } 
 
     protected function excuteCurl($callUrl, $method, $headers = array(), $data = array(), $session_type="")
@@ -56,20 +59,22 @@ class KakaoService
         $response = curl_exec($ch);
         $status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
         curl_close($ch);
-
+        
         if($session_type=="accessToken"){
-            //Custom Session설정 : refreshToken은 2개월 보존되며, 1개월 남았을 때 갱신 가능하므로 세션이 아닌 개별 저장소에 저장하는 것이 좋음
-            if(isset(json_decode($response["response"])->access_token)){
-                $_SESSION["accessToken"] = json_decode($response["response"])->access_token;
+            //Custom Session설정 : refreshToken은 2개월 보존되며, 1개월 남았을 때 갱신 가능하므로 세션이 아닌 개별 저장소에 저장하는 것이 좋음           
+            $_SESSION["accessToken"] = "";
+            if(isset(json_decode($response)->access_token)){
+                $_SESSION["accessToken"] = json_decode($response)->access_token;
             }
-            if(isset(json_decode($response["response"])->refresh_token)){
-                $_SESSION["refreshToken"] = json_decode($response["response"])->refresh_token;
+            if(isset(json_decode($response)->refresh_token)){
+                $_SESSION["refreshToken"] = json_decode($response)->refresh_token;
             }
         }
+
         if($session_type=="profile"){
             //Custom Session설정 
-            if(isset(json_decode($response["response"])->id)){
-                $_SESSION["loginProfile"] = json_decode($response["response"]);
+            if(isset(json_decode($response)->id)){
+                $_SESSION["loginProfile"] = json_decode($response);
             }
         }        
 

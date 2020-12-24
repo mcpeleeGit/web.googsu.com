@@ -1,8 +1,10 @@
 <?php
 //모듈 수정 원칙
-//0. Kakao Response를 가급적 가공 안함
-//1. 초보자도 쉽게 사용할 수 있어야함 (과도한 리펙토링 지양)
-//2. 리턴타입은 항상 Json
+//1. Kakao Response를 가급적 가공 안함
+//2. 리턴타입은 Objec, Json, Echo 선택
+//3. KakaoAPIService는 API 호출 스펙 정의 
+//4. KakaoService는 환경설정과 출력 유틸
+
 require('api/kakao/service/KakaoService.php');
 class KakaoAPIService extends KakaoService
 {
@@ -30,14 +32,14 @@ class KakaoAPIService extends KakaoService
     {
         $code = $_GET["code"]; // 서버로 부터 토큰을 발급받을 수 있는 코드를 받아옵니다.
         $callUrl = "https://kauth.kakao.com/oauth/token?grant_type=authorization_code&client_id=" . $this->REST_API_KEY . "&redirect_uri=" . $this->REDIRECT_URI . "&code=" . $code . "&client_secret=" . $this->CLIENT_SECRET;
-        return $this->excuteCurl($callUrl, "POST", array(),"accessToken");
+        return $this->excuteCurl($callUrl, "POST", array(), array(), "accessToken");
     }
 
     public function getProfile()
     {
         $callUrl = "https://kapi.kakao.com/v2/user/me";
         $headers[] = "Authorization: Bearer " . $_SESSION["accessToken"];
-        return $this->excuteCurl($callUrl, "POST", $headers, "profile");;
+        return $this->excuteCurl($callUrl, "POST", $headers, array(), "profile");;
     }    
 
     public function setLogOut()
