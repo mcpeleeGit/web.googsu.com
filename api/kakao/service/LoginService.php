@@ -12,8 +12,13 @@ class LoginService extends service {
         $_SESSION["loginProfile"] = $KakaoAPIService->getProfile();  
 
         $protocol = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https://" : "http://");
-        header("Location: ".$protocol.$_SERVER['HTTP_HOST']);
-        die();        
+        $this->Redirect($protocol.$_SERVER['HTTP_HOST']."/", false);  
+    }
+
+    public function Redirect($url, $permanent = false)
+    {
+        header('Location: ' . $url, true, $permanent ? 301 : 302);
+        exit(0);
     }
 }
 ?>
