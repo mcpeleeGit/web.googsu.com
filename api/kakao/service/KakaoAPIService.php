@@ -16,9 +16,10 @@ class KakaoAPIService
         $this->ADMIN_KEY      = "72462462f6fc9baad63f2de2ad3d865b"; // https://developers.kakao.com > 내 애플리케이션 > 앱 설정 > 요약 정보
         $this->CLIENT_SECRET  = "QZhr9itOs0mxVRDxIvuOfOLzjZMc5q1U"; // https://developers.kakao.com > 내 애플리케이션 > 제품 설정 > 카카오 로그인 > 보안
 
+
         $protocol = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https://" : "http://");
-        $this->REDIRECT_URI          = urlencode($protocol . $_SERVER['HTTP_HOST'] . "/PHPSimplePack.php"); // 내 애플리케이션 > 제품 설정 > 카카오 로그인
-        $this->LOGOUT_REDIRECT_URI   = urlencode($protocol . $_SERVER['HTTP_HOST'] . "/PHPSimplePack.php"); // 내 애플리케이션 > 제품 설정 > 카카오 로그인 > 고급 > Logout Redirect URI
+        $this->REDIRECT_URI          = urlencode($protocol . $_SERVER['HTTP_HOST']. "/api/kakao/login/loginCallBack");  // 내 애플리케이션 > 제품 설정 > 카카오 로그인
+        $this->LOGOUT_REDIRECT_URI   = urlencode($protocol . $_SERVER['HTTP_HOST']. "/api/kakao/login/logoutCallBack"); // 내 애플리케이션 > 제품 설정 > 카카오 로그인 > 고급 > Logout Redirect URI
         $this->RETURN_TYPE           = $return_type;
         if (session_status() == PHP_SESSION_NONE) {
             session_start();
