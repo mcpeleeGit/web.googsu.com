@@ -62,17 +62,17 @@ class KakaoService
 
         if($session_type=="accessToken"){
             //Custom Session설정 : refreshToken은 2개월 보존되며, 1개월 남았을 때 갱신 가능하므로 세션이 아닌 개별 저장소에 저장하는 것이 좋음
-            if(isset(json_decode($response["response"])->access_token)){
-                $_SESSION["accessToken"] = json_decode($response["response"])->access_token;
+            if(isset(json_decode($response)->access_token)){
+                $_SESSION["accessToken"] = json_decode($response)->access_token;
             }
-            if(isset(json_decode($response["response"])->refresh_token)){
-                $_SESSION["refreshToken"] = json_decode($response["response"])->refresh_token;
+            if(isset(json_decode($response)->refresh_token)){
+                $_SESSION["refreshToken"] = json_decode($response)->refresh_token;
             }
         }
         if($session_type=="profile"){
             //Custom Session설정 
-            if(isset(json_decode($response["response"])->id)){
-                $_SESSION["loginProfile"] = json_decode($response["response"]);
+            if(isset(json_decode($response)->id)){
+                $_SESSION["loginProfile"] = json_decode($response);
             }
         }        
 

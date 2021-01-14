@@ -37,14 +37,14 @@ class KakaoAPIService extends KakaoService
     {
         $code = $_GET["code"]; // 서버로 부터 토큰을 발급받을 수 있는 코드를 받아옵니다.
         $callUrl = "https://kauth.kakao.com/oauth/token?grant_type=authorization_code&client_id=" . $this->REST_API_KEY . "&redirect_uri=" . $this->REDIRECT_URI . "&code=" . $code . "&client_secret=" . $this->CLIENT_SECRET;
-        return $this->excuteCurl($callUrl, "POST", array(),"accessToken");
+        return $this->excuteCurl($callUrl, "POST", array(), array(), "accessToken");
     }
 
     public function getProfile()
     {
         $callUrl = "https://kapi.kakao.com/v2/user/me";
         $headers[] = "Authorization: Bearer " . $_SESSION["accessToken"];
-        return $this->excuteCurl($callUrl, "POST", $headers, "profile");;
+        return $this->excuteCurl($callUrl, "POST", $headers,  array(), "profile");;
     }    
 
     public function setLogOut()
