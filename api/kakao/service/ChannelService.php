@@ -4,7 +4,7 @@ class ChannelService extends service {
 
         //{"event":"added","id":"1111","id_type":"app_user_id","plus_friend_public_id":"_FLX","plus_friend_uuid":"@ad","updated_at":"2020-01-01T00:00:00Z"}'
 
-        $this->hasAccess($_GET["event"], $_GET["id"], $_GET["id_type"], $_GET["plus_friend_public_id"], $_GET["plus_friend_uuid"], $_GET["updated_at"]);
+        $this->hasAccess($_POST["event"], $_POST["id"], $_POST["id_type"], $_POST["plus_friend_public_id"], $_POST["plus_friend_uuid"], $_POST["updated_at"]);
         Response::jsonReturn('excute', 'error'); 
     }
 
