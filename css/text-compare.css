@@ -1,0 +1,164 @@
+.text-compare-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.text-compare-container h1 {
+    color: #333;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.description {
+    text-align: center;
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+.text-inputs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.text-input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.text-input-group label {
+    margin-bottom: 0.5rem;
+    color: #444;
+    font-weight: 500;
+}
+
+.text-input-group textarea {
+    height: 300px;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    resize: vertical;
+    font-family: 'Noto Sans KR', monospace;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.text-input-group textarea:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0,123,255,0.25);
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.primary-button, .secondary-button {
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.primary-button {
+    background-color: #007bff;
+    color: white;
+}
+
+.primary-button:hover {
+    background-color: #0056b3;
+}
+
+.secondary-button {
+    background-color: #e9ecef;
+    color: #495057;
+}
+
+.secondary-button:hover {
+    background-color: #dee2e6;
+}
+
+.result-section {
+    background-color: #f8f9fa;
+    padding: 2rem;
+    border-radius: 8px;
+    margin-top: 2rem;
+}
+
+.result-section h2 {
+    color: #333;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+#compareResult {
+    font-family: monospace;
+    white-space: pre-wrap;
+    line-height: 1.5;
+    counter-reset: line;
+}
+
+.line, .diff-added, .diff-removed {
+    display: flex;
+    align-items: flex-start;
+    padding: 0.25rem 0.5rem;
+    font-family: 'Noto Sans KR', monospace;
+}
+
+.line-number {
+    user-select: none;
+    color: #666;
+    margin-right: 1rem;
+    min-width: 3em;
+    text-align: right;
+    font-family: monospace;
+}
+
+.diff-added {
+    background-color: #e6ffe6;
+    color: #006600;
+}
+
+.diff-removed {
+    background-color: #ffe6e6;
+    color: #cc0000;
+}
+
+.char-removed {
+    background-color: #ffcccc;
+    color: #990000;
+    border-radius: 2px;
+    margin: 0 1px;
+}
+
+.diff-added .char-removed {
+    background-color: #ccffcc;
+    color: #006600;
+}
+
+@media (max-width: 768px) {
+    .text-inputs {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .text-input-group textarea {
+        height: 200px;
+    }
+
+    .button-group {
+        flex-direction: column;
+    }
+
+    .primary-button, .secondary-button {
+        width: 100%;
+    }
+} 

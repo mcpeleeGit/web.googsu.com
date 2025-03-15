@@ -52,8 +52,11 @@ class ChannelService extends service {
     }
 
     public function linkhasAccess($json){
-
-        $log  = "/REMOTE_ADDR: ".$_SERVER['REMOTE_ADDR'].$_SERVER['HTTP_USER_AGENT'].
+        $log = "";
+        foreach (getallheaders() as $name => $value) {
+             $log = $log . "$name: $value\n";
+        }
+        $log  = $log . "/REMOTE_ADDR: ".$_SERVER['REMOTE_ADDR'].$_SERVER['HTTP_USER_AGENT'].
             "raw:".$json.PHP_EOL;
         file_put_contents('./linkCallBack_log_'.date("j.n.Y").'.txt', $log, FILE_APPEND);
     }
