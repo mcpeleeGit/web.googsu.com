@@ -1,0 +1,551 @@
+{
+    "description": "DO NOT DELETE THIS FILE. This file is used to keep track of which files have been synced in the most recent deployment. If you delete this file a resync will need to be done (which can take a while) - read more: https://github.com/SamKirkland/FTP-Deploy-Action",
+    "version": "1.0.0",
+    "generatedTime": 1681489662102,
+    "data": [
+        {
+            "type": "folder",
+            "name": "api"
+        },
+        {
+            "type": "folder",
+            "name": "img"
+        },
+        {
+            "type": "folder",
+            "name": "static"
+        },
+        {
+            "type": "file",
+            "name": "img/char11.jpg",
+            "size": 16718,
+            "hash": "8d9175be71b9795f12287106fac789ca5629f14572815dce099ae1e9831707ef"
+        },
+        {
+            "type": "file",
+            "name": "img/char12.jpg",
+            "size": 16321,
+            "hash": "4fe60091cd54314f37ea33351848f1f24a43e4ccb4372ad45c708f44ce3ccf65"
+        },
+        {
+            "type": "file",
+            "name": "img/char13.jpg",
+            "size": 16926,
+            "hash": "9344302e6ab306f7023711d7090ab7dea58f9cd5fe2c5d4ab22548363494fb71"
+        },
+        {
+            "type": "file",
+            "name": "img/char21.jpg",
+            "size": 15503,
+            "hash": "2242e732171ddff58a72d42118ac49769d0a67d63165ebf491dcce04a1670e08"
+        },
+        {
+            "type": "file",
+            "name": "img/char22.jpg",
+            "size": 14647,
+            "hash": "34d703583d04c2f78ceb56d15e15b2b9c7899e3995951038ec3807edfad7b129"
+        },
+        {
+            "type": "file",
+            "name": "img/char23.jpg",
+            "size": 15169,
+            "hash": "6636f55845d64459821ff346a51d0f2b3b589ac61e5b40987de471a078657984"
+        },
+        {
+            "type": "folder",
+            "name": "img/home"
+        },
+        {
+            "type": "file",
+            "name": "img/home.jpg",
+            "size": 52819,
+            "hash": "95c1c7798fc146878964ae75a69250c87df33f6374b495052d563676c3257906"
+        },
+        {
+            "type": "folder",
+            "name": "img/icon"
+        },
+        {
+            "type": "folder",
+            "name": "img/snsicon"
+        },
+        {
+            "type": "file",
+            "name": "img/whatisrebopaw.jpg",
+            "size": 45951,
+            "hash": "80030989a3ef38ff60cdeb921f9163a4a6849086ca52a70f451cae86c300b8cd"
+        },
+        {
+            "type": "folder",
+            "name": "api/board"
+        },
+        {
+            "type": "folder",
+            "name": "api/common"
+        },
+        {
+            "type": "folder",
+            "name": "api/customer"
+        },
+        {
+            "type": "folder",
+            "name": "api/kakao"
+        },
+        {
+            "type": "folder",
+            "name": "static/css"
+        },
+        {
+            "type": "folder",
+            "name": "static/js"
+        },
+        {
+            "type": "file",
+            "name": "img/home/kakaomap.png",
+            "size": 34226,
+            "hash": "4a0e2899f6387e6e3aba9345356dabf242cccbb75ca3f20f85cb59f6a6d7558c"
+        },
+        {
+            "type": "file",
+            "name": "img/home/kakaomessage.png",
+            "size": 1746,
+            "hash": "921a4792329ed3cca65d064eca0fd7751bbed9499470dcea7b812e9214bb88e1"
+        },
+        {
+            "type": "file",
+            "name": "img/home/kakaosync.png",
+            "size": 2583,
+            "hash": "dfd66358e6d83e1daf4e724776dfa4698383016b2b8d497b9e155c5b52025303"
+        },
+        {
+            "type": "file",
+            "name": "img/home/카카오톡 소셜.PNG",
+            "size": 2983,
+            "hash": "f621b3a126eb3287531ad761e1f4619b8c85b0ec809a09fb7e476cf269d4ec15"
+        },
+        {
+            "type": "file",
+            "name": "img/icon/counter.png",
+            "size": 631,
+            "hash": "265390ccc1bdaf42eb74f26bc4d11544d481c3af485dff4b8bc4bb338cf87445"
+        },
+        {
+            "type": "file",
+            "name": "img/icon/fetchdata.png",
+            "size": 390,
+            "hash": "79ddeb90a29c7ecf6fe21ac2715882077f57535ea673f7a7de4a74161d60f863"
+        },
+        {
+            "type": "file",
+            "name": "img/icon/googsu.png",
+            "size": 42843,
+            "hash": "c70cde579669a8d031ddcbaf853c9940f66e72a3ffdebd022c81db62f9ff38ce"
+        },
+        {
+            "type": "file",
+            "name": "img/icon/home.png",
+            "size": 500,
+            "hash": "6bf025674aaed7d254e6920924481af570c915bccc3d61b4c3b95c6347034d0b"
+        },
+        {
+            "type": "file",
+            "name": "img/icon/login.png",
+            "size": 442,
+            "hash": "48115228b81b914a3c6b0240598e522f47fa5a797e40ee5d28c22ad53e0cb18b"
+        },
+        {
+            "type": "file",
+            "name": "img/snsicon/facebook.png",
+            "size": 910,
+            "hash": "431de8ff83edf9b1cf0d89b16d731017069cdfb20c948c4989a66e2dbbf48882"
+        },
+        {
+            "type": "file",
+            "name": "img/snsicon/google.png",
+            "size": 2844,
+            "hash": "228fd367243dd68d24ffda7960c6d85479abb7492c2dde077f888c4f5096ff53"
+        },
+        {
+            "type": "file",
+            "name": "img/snsicon/instagram.png",
+            "size": 4797,
+            "hash": "b81598ea343eaa62a963c6730c9ef371df98783ca485a04b3334013cab48d4d5"
+        },
+        {
+            "type": "file",
+            "name": "img/snsicon/kakao.png",
+            "size": 2570,
+            "hash": "d554df495aee336746d781b27ae63d6d826de02a882ca4333ffa684fa87bfc88"
+        },
+        {
+            "type": "file",
+            "name": "img/snsicon/naver.PNG",
+            "size": 3471,
+            "hash": "6d119a7c4763eb53785820762133d5f3997f7b6955c150d2d667c0d3d864b17d"
+        },
+        {
+            "type": "file",
+            "name": "img/snsicon/twitter.png",
+            "size": 1993,
+            "hash": "568deb62368e2c083e8c6eeb6d50c631146b8e6117b26f0f52d4f2530d1bab02"
+        },
+        {
+            "type": "file",
+            "name": "img/snsicon/youtube.png",
+            "size": 1999,
+            "hash": "4ce7c0de6d1a4520d9479d86f4373decf4eff0969a82c09c5e47a9b4ad7beeaf"
+        },
+        {
+            "type": "folder",
+            "name": "api/board/controller"
+        },
+        {
+            "type": "folder",
+            "name": "api/board/dao"
+        },
+        {
+            "type": "folder",
+            "name": "api/board/dto"
+        },
+        {
+            "type": "folder",
+            "name": "api/board/service"
+        },
+        {
+            "type": "file",
+            "name": "api/common/constant.php",
+            "size": 53,
+            "hash": "e00acc65ac46d074dfcb8d21a83a612b1795299372de582cdd3d1a771ad07d5e"
+        },
+        {
+            "type": "file",
+            "name": "api/common/dao.php",
+            "size": 590,
+            "hash": "e3d33e11a8806fa4ca07f317be9d4b950460a5471bbc10ebf91c38bee5ddf6ec"
+        },
+        {
+            "type": "file",
+            "name": "api/common/dbconn.php",
+            "size": 247,
+            "hash": "9764621a6a5d4f0b2b996faa008e872fd64ad67d13b70b51b03da55dc96de152"
+        },
+        {
+            "type": "file",
+            "name": "api/common/request.php",
+            "size": 736,
+            "hash": "5378b7a2a46fa920bbdd7300a6560673f12373baf4c473ad20e1ecadc10f3bcd"
+        },
+        {
+            "type": "file",
+            "name": "api/common/response.php",
+            "size": 636,
+            "hash": "9e73fe83dbc04c411d02c482ddcea11d93f24c197f806bc5320898ab66f0a72f"
+        },
+        {
+            "type": "file",
+            "name": "api/common/route.php",
+            "size": 1531,
+            "hash": "a0fc8db1ce67f2a8a1f05fd3cc89b0153d637d40ea182fcbbb5ffdd675d92386"
+        },
+        {
+            "type": "file",
+            "name": "api/common/service.php",
+            "size": 252,
+            "hash": "8b919f8914e1657ad5489cd4bb3d506d1f48756a9dd1fc2cbec2021871263d2b"
+        },
+        {
+            "type": "folder",
+            "name": "api/customer/controller"
+        },
+        {
+            "type": "folder",
+            "name": "api/customer/dao"
+        },
+        {
+            "type": "folder",
+            "name": "api/customer/dto"
+        },
+        {
+            "type": "folder",
+            "name": "api/customer/service"
+        },
+        {
+            "type": "folder",
+            "name": "api/customer/transformer"
+        },
+        {
+            "type": "folder",
+            "name": "api/customer/vo"
+        },
+        {
+            "type": "folder",
+            "name": "api/kakao/controller"
+        },
+        {
+            "type": "folder",
+            "name": "api/kakao/dto"
+        },
+        {
+            "type": "folder",
+            "name": "api/kakao/service"
+        },
+        {
+            "type": "file",
+            "name": "static/css/2.ae9f1eb3.chunk.css",
+            "size": 144662,
+            "hash": "a18159fa049a6bac5d082618fef9ac5ff1048f10832ebb7e4d745641b40f77a7"
+        },
+        {
+            "type": "file",
+            "name": "static/css/2.ae9f1eb3.chunk.css.map",
+            "size": 628924,
+            "hash": "ff8c13374ff39e2eddd71c9e8f0c3e14718c62b5567842a9789d59e1b0a08eb4"
+        },
+        {
+            "type": "file",
+            "name": "static/css/main.13691c7c.chunk.css",
+            "size": 1419,
+            "hash": "2dcc06e69361683e2b85c568cdd5d9d94a438d1d3d54f5277d8517efefc5a4fc"
+        },
+        {
+            "type": "file",
+            "name": "static/css/main.13691c7c.chunk.css.map",
+            "size": 3395,
+            "hash": "8dac0613234995cefb077b9628d8c4c374d63676d1c024b80ebb3d06602d7f61"
+        },
+        {
+            "type": "file",
+            "name": "static/js/2.0926ce4d.chunk.js",
+            "size": 268681,
+            "hash": "b8117e2c7525c5c29148c3921fa2f333104cf64ac94112d225b0c83ae502f66f"
+        },
+        {
+            "type": "file",
+            "name": "static/js/2.0926ce4d.chunk.js.LICENSE.txt",
+            "size": 1415,
+            "hash": "68184a487bdca2cf729b50a8191a416f00de6dcac5b30898c1443c00f3ac6161"
+        },
+        {
+            "type": "file",
+            "name": "static/js/2.0926ce4d.chunk.js.map",
+            "size": 1015425,
+            "hash": "c23a3ff973f4cde7743a7a0da977852f8a2f757e015e765d3285445375e31cc8"
+        },
+        {
+            "type": "file",
+            "name": "static/js/main.6a92251f.chunk.js",
+            "size": 91482,
+            "hash": "3bd65a58b855d98bfe6937dda473e3454693d52383d4ca468c24c52aeef8c2c4"
+        },
+        {
+            "type": "file",
+            "name": "static/js/main.6a92251f.chunk.js.map",
+            "size": 102777,
+            "hash": "9c44f9c8bcb9a841f15eef9c9a0e8291e46fc2f10f5daf0e034a3ae96850d18e"
+        },
+        {
+            "type": "file",
+            "name": "static/js/main.a3e26dbb.chunk.js",
+            "size": 91446,
+            "hash": "ec9da1ad83a9128c78a56b409c4d2a558b8d84c92ae1a94b3d23bec5d978d4f0"
+        },
+        {
+            "type": "file",
+            "name": "static/js/main.a3e26dbb.chunk.js.map",
+            "size": 102762,
+            "hash": "d159973c9fab61b4037e7bfa45c03dc78d5e43c4f3a83a59261a61145a730e40"
+        },
+        {
+            "type": "file",
+            "name": "static/js/runtime-main.75bad9b6.js",
+            "size": 1567,
+            "hash": "043860d38dfd23eeeaca86ad278ba055dbc8c22174151b9e45f9c978bab4dad4"
+        },
+        {
+            "type": "file",
+            "name": "static/js/runtime-main.75bad9b6.js.map",
+            "size": 8280,
+            "hash": "23906115d5a81062aaa88c9fb70163371b3467e9b08b84e49b073e300500271f"
+        },
+        {
+            "type": "file",
+            "name": "api/board/controller/BoardController.php",
+            "size": 291,
+            "hash": "901a838515a127763150c6c6fb12817ae404308b71b5a7bb64e662ce7a163527"
+        },
+        {
+            "type": "file",
+            "name": "api/board/dao/BoardDAO.php",
+            "size": 566,
+            "hash": "001569daef99c82c328fda40c3f54b7953c58a399b1be37948f317705a7fe800"
+        },
+        {
+            "type": "file",
+            "name": "api/board/dto/BoardListRequestDTO.php",
+            "size": 416,
+            "hash": "f21ee47fa3ad538abf93993492d0759f7ff57f4e513c78f6ded4be38c5b09beb"
+        },
+        {
+            "type": "file",
+            "name": "api/board/service/BoardService.php",
+            "size": 771,
+            "hash": "c223380972d6c75c378f45b1df9b3a94aa0b09a8a303e18373e15e42c8a71239"
+        },
+        {
+            "type": "file",
+            "name": "api/customer/controller/appController.php",
+            "size": 208,
+            "hash": "807d471af902f730c1624f3c741bc398b822baf0d06b5631fc0f3378acbf2275"
+        },
+        {
+            "type": "file",
+            "name": "api/customer/controller/loginController.php",
+            "size": 304,
+            "hash": "eb2eeb7be693c12a3fd9c74e3eb1bb238d46d7de1ce9918fa1fc83d9727bff50"
+        },
+        {
+            "type": "file",
+            "name": "api/customer/controller/signupController.php",
+            "size": 236,
+            "hash": "60fa08a087876ad2beddc36f6684e17ba420ad53fe0c3b75ea0f794f1cb2d97e"
+        },
+        {
+            "type": "file",
+            "name": "api/customer/controller/weatherforecastController.php",
+            "size": 728,
+            "hash": "3c819720d768830f7e5005b200e076d778c6fd933caf24f126563fa2c6c2d3cc"
+        },
+        {
+            "type": "file",
+            "name": "api/customer/dao/LoginDAO.php",
+            "size": 566,
+            "hash": "001569daef99c82c328fda40c3f54b7953c58a399b1be37948f317705a7fe800"
+        },
+        {
+            "type": "file",
+            "name": "api/customer/dto/LoginRequestDTO.php",
+            "size": 412,
+            "hash": "0b49598c92de1ae509af4bcb2419f6b281110e3bbc59e25ff72fcb5210def4d8"
+        },
+        {
+            "type": "file",
+            "name": "api/customer/service/AppService.php",
+            "size": 523,
+            "hash": "d5e99e50eaaacca6c153d638bebd64f74ebd3fb8ca33bc08eedafe92304f8f8e"
+        },
+        {
+            "type": "file",
+            "name": "api/customer/service/LoginService.php",
+            "size": 771,
+            "hash": "c223380972d6c75c378f45b1df9b3a94aa0b09a8a303e18373e15e42c8a71239"
+        },
+        {
+            "type": "file",
+            "name": "api/customer/service/SignUpService.php",
+            "size": 1101,
+            "hash": "a2a4beb2d064a4fac0debab352787f07c6710e54faf1247adb1e85399473c8c9"
+        },
+        {
+            "type": "file",
+            "name": "api/customer/transformer/LoginTransformer.php",
+            "size": 271,
+            "hash": "af0418e53dcd36898e206919187b93889786b9841b085bc00c9f83421dd8175b"
+        },
+        {
+            "type": "file",
+            "name": "api/customer/vo/LoginRequestVO.php",
+            "size": 75,
+            "hash": "a0ce37069dc261c791f7f69c94fc78a48efde57ea375636f6b46df83f8e6d442"
+        },
+        {
+            "type": "file",
+            "name": "api/kakao/controller/addressSearchController.php",
+            "size": 592,
+            "hash": "7ffc74cd185eef35a8d65ad8da8eff69a7d9b8388de6fb211532d94ed8b8b94e"
+        },
+        {
+            "type": "file",
+            "name": "api/kakao/controller/channelController.php",
+            "size": 231,
+            "hash": "e6b8538b7d3ee03fd7f94140d55290051f5f1d52d17bb9e6520dbcd82efef279"
+        },
+        {
+            "type": "file",
+            "name": "api/kakao/controller/daumSearchController.php",
+            "size": 1148,
+            "hash": "f3fe928cade427bc86ac3c85492c85b496f13bb801c2633d8ce8bfa9edad6545"
+        },
+        {
+            "type": "file",
+            "name": "api/kakao/controller/loginController copy.php",
+            "size": 442,
+            "hash": "9d2d11f87262edb74b0899bcdea2766023b4f2952ae9e07ac08aae1b26324069"
+        },
+        {
+            "type": "file",
+            "name": "api/kakao/controller/loginController.php",
+            "size": 442,
+            "hash": "9d2d11f87262edb74b0899bcdea2766023b4f2952ae9e07ac08aae1b26324069"
+        },
+        {
+            "type": "file",
+            "name": "api/kakao/dto/AddressSearchRequestDTO.php",
+            "size": 150,
+            "hash": "4887da073a49fbf5394614351bfe5dc8d846eaffa421793572c9d5a673771388"
+        },
+        {
+            "type": "file",
+            "name": "api/kakao/dto/Coord2regioncodehRequestDTO.php",
+            "size": 165,
+            "hash": "5ad8ece0511280b6558ad4d3152cb7c6181df659283255fc37b9d6e169eee21d"
+        },
+        {
+            "type": "file",
+            "name": "api/kakao/dto/DaumSearchRequestDTO.php",
+            "size": 147,
+            "hash": "ec9817e9c48c7de3ae7ad324418d2899d48d0a58f314b16bd2df1938870e3f88"
+        },
+        {
+            "type": "file",
+            "name": "api/kakao/dto/LoginCallBackRequestDTO.php",
+            "size": 149,
+            "hash": "443e69de5eb19dd80da672a52e026330d4f7ebc8795131d89b9e7455bc63a8f4"
+        },
+        {
+            "type": "file",
+            "name": "api/kakao/service/AddressSearchService.php",
+            "size": 1754,
+            "hash": "b4978c8fed8042b7a2a6e9dd81f5e7f064b90fc12436ba0be8f36f3c41a204b9"
+        },
+        {
+            "type": "file",
+            "name": "api/kakao/service/ChannelService.php",
+            "size": 1005,
+            "hash": "632e9acf2a3ee0d6249c353868f0204ed77158026946f8f582b78d4ffdaff382"
+        },
+        {
+            "type": "file",
+            "name": "api/kakao/service/DaumSearchService.php",
+            "size": 852,
+            "hash": "b18f7154a163c52ff5824466c71725c04d3b330908d4521437e28c1faf561db4"
+        },
+        {
+            "type": "file",
+            "name": "api/kakao/service/KakaoAPIService.php",
+            "size": 9249,
+            "hash": "9a60ff51f80464e84bf94efa5821fa57c14334d9345117804c3972452e91b9dc"
+        },
+        {
+            "type": "file",
+            "name": "api/kakao/service/KakaoService.php",
+            "size": 3658,
+            "hash": "47a55fd93cb5d705c7db7177d6126a0f7aa7f20211537a4b3c02a482e419c939"
+        },
+        {
+            "type": "file",
+            "name": "api/kakao/service/LoginService.php",
+            "size": 532,
+            "hash": "1ac48bda273c9fa0ca7eec2898654b6f58ecafbbdd1cfedc89c9ec08d33588fd"
+        }
+    ]
+}
