@@ -83,6 +83,7 @@ $additional_js = $additional_js ?? [];
                     <ul class="submenu">
                         <li><a href="/tls-checker.php">TLS 버전 체크</a></li>
                         <li><a href="/ip-info.php">IP 정보 확인</a></li>
+                        <li><a href="/firewall-check.php">방화벽 체크</a></li>
                     </ul>
                 </li>
                 <li class="has-submenu">
