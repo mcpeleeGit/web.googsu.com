@@ -598,4 +598,107 @@ footer {
 
 .tool-card .tool-actions {
     margin-top: 1rem;
+}
+
+/* 검색 섹션 스타일 */
+.search-section {
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+    background-color: #f8f9fa;
+}
+
+.search-container {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    gap: 0.5rem;
+    padding: 0 1rem;
+}
+
+.search-input {
+    flex: 1;
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    transition: border-color 0.3s ease;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0,123,255,0.25);
+}
+
+.search-button {
+    padding: 0.8rem 1.2rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+    background-color: #0056b3;
+}
+
+.search-icon {
+    font-size: 1.2rem;
+}
+
+/* 반응형 스타일 */
+@media (max-width: 768px) {
+    .search-container {
+        padding: 0 1rem;
+    }
+}
+
+/* 인기 도구 섹션 스타일 */
+.popular-tools-section {
+    margin-bottom: 2rem;
+}
+
+.popular-tools-section h2 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.tool-card.popular {
+    border: 2px solid #007bff;
+    position: relative;
+    overflow: hidden;
+}
+
+.popular-badge {
+    position: absolute;
+    top: 10px;
+    right: -30px;
+    background: #007bff;
+    color: white;
+    padding: 5px 40px;
+    transform: rotate(45deg);
+    font-size: 0.8rem;
+    font-weight: 500;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.tool-card.popular:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,123,255,0.2);
+}
+
+@media (max-width: 768px) {
+    .popular-tools-section .tools-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .popular-badge {
+        font-size: 0.7rem;
+        padding: 3px 30px;
+    }
 } 
