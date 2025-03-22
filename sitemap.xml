@@ -2,33 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <!-- 메인 페이지 -->
     <url>
-        <loc>https://googsu.com/main.php</loc>
+        <loc>https://googsu.com/</loc>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
 
-    <!-- 기본 도구 -->
+    <!-- 계산/변환 도구 -->
     <url>
         <loc>https://googsu.com/calculator.php</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <!-- 인코더/디코더 -->
-    <url>
-        <loc>https://googsu.com/url-encoder.php</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://googsu.com/jwt-decoder.php</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <!-- 변환기 -->
-    <url>
-        <loc>https://googsu.com/hex-image.php</loc>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -38,7 +19,71 @@
         <priority>0.8</priority>
     </url>
 
-    <!-- 단위 환산 -->
+    <!-- 인코딩/디코딩 도구 -->
+    <url>
+        <loc>https://googsu.com/url-encoder.php</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://googsu.com/base64-converter.php</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://googsu.com/hash-generator.php</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://googsu.com/jwt-decoder.php</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- 개발 유틸리티 -->
+    <url>
+        <loc>https://googsu.com/hex-image.php</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://googsu.com/xml-validator.php</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://googsu.com/json-formatter.php</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://googsu.com/qr-generator.php</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://googsu.com/timestamp-converter.php</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://googsu.com/text-compare.php</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://googsu.com/cron-examples.php</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://googsu.com/regex-examples.php</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- 단위 변환 도구 -->
     <url>
         <loc>https://googsu.com/unit/length.php</loc>
         <changefreq>monthly</changefreq>
@@ -60,6 +105,23 @@
         <priority>0.8</priority>
     </url>
 
+    <!-- 디자인 도구 -->
+    <url>
+        <loc>https://googsu.com/design/rgb-picker.php</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://googsu.com/design/color-palette.php</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://googsu.com/markdown-converter.php</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
     <!-- 보안 도구 -->
     <url>
         <loc>https://googsu.com/tls-checker.php</loc>
@@ -71,32 +133,23 @@
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
-
-    <!-- 개발자 도구 -->
     <url>
-        <loc>https://googsu.com/xml-validator.php</loc>
+        <loc>https://googsu.com/cidr-calculator.php</loc>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://googsu.com/text-compare.php</loc>
+        <loc>https://googsu.com/firewall-check.php</loc>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://googsu.com/cron-examples.php</loc>
+        <loc>https://googsu.com/char-counter.php</loc>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://googsu.com/regex-examples.php</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <!-- 디자인 도구 -->
-    <url>
-        <loc>https://googsu.com/design/rgb-picker.php</loc>
+        <loc>https://googsu.com/text/html-entities.php</loc>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
