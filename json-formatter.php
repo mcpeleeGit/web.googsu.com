@@ -1,12 +1,12 @@
 <?php
-$page_title = 'QR 코드 생성기';
+$page_title = 'JSON 포맷터/뷰어';
 $additional_css = ['/css/text-compare.css'];
 include_once 'includes/header.php';
 ?>
 
 <div class="container">
     <div class="text-compare-container">
-        <h1>QR 코드 생성기</h1>
+        <h1>JSON 포맷터/뷰어</h1>
         
         <div class="mui-card">
             <div class="mui-card-content">
@@ -14,14 +14,31 @@ include_once 'includes/header.php';
                     <div class="input-group mb-5">
                         <textarea name="input" 
                                   class="form-control large-textarea" 
-                                  rows="4" 
-                                  placeholder="QR 코드로 변환할 텍스트를 입력하세요"
-                                  required><?php echo isset($_POST['input']) ? htmlspecialchars($_POST['input']) : 'https://googsu.com'; ?></textarea>
+                                  rows="8" 
+                                  placeholder="JSON 데이터를 입력하세요"
+                                  required><?php echo isset($_POST['input']) ? htmlspecialchars($_POST['input']) : '{
+  "name": "홍길동",
+  "age": 30,
+  "email": "hong@example.com",
+  "address": {
+    "street": "서울시 강남구",
+    "city": "서울",
+    "country": "대한민국"
+  },
+  "hobbies": ["독서", "운동", "음악"],
+  "isActive": true
+}'; ?></textarea>
                     </div>
                     
                     <div class="button-group mt-4">
-                        <button type="submit" name="action" value="generate" class="mui-button large-button">
-                            <i class="fas fa-qrcode"></i> QR 코드 생성
+                        <button type="submit" name="action" value="format" class="mui-button large-button">
+                            <i class="fas fa-code"></i> 포맷팅
+                        </button>
+                        <button type="submit" name="action" value="minify" class="mui-button large-button">
+                            <i class="fas fa-compress-alt"></i> 압축
+                        </button>
+                        <button type="submit" name="action" value="validate" class="mui-button large-button">
+                            <i class="fas fa-check-circle"></i> 검증
                         </button>
                     </div>
                 </form>
@@ -32,11 +49,27 @@ include_once 'includes/header.php';
                     $action = $_POST['action'] ?? '';
                     $result = '';
                     $error = '';
+                    $isValid = false;
 
                     if (!empty($input)) {
-                        // QR 코드 생성을 위한 API URL (QR Server API 사용)
-                        $qr_url = 'https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=' . urlencode($input);
-                        $result = $qr_url;
+                        $json = json_decode($input);
+                        $isValid = json_last_error() === JSON_ERROR_NONE;
+
+                        if ($isValid) {
+                            switch ($action) {
+                                case 'format':
+                                    $result = json_encode($json, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
+                                    break;
+                                case 'minify':
+                                    $result = json_encode($json, JSON_UNESCAPED_UNICODE);
+                                    break;
+                                case 'validate':
+                                    $result = "JSON 데이터가 유효합니다.\n\n구조:\n" . json_encode($json, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
+                                    break;
+                            }
+                        } else {
+                            $error = '올바른 JSON 형식이 아닙니다: ' . json_last_error_msg();
+                        }
                     }
                 }
                 ?>
@@ -49,18 +82,13 @@ include_once 'includes/header.php';
 
                 <?php if (isset($result) && !empty($result)): ?>
                     <div class="result-section">
-                        <h3>생성된 QR 코드</h3>
-                        <div class="qr-box">
-                            <img src="<?php echo htmlspecialchars($result); ?>" alt="QR Code" class="qr-image">
+                        <h3>결과</h3>
+                        <div class="result-box">
+                            <pre><?php echo htmlspecialchars($result); ?></pre>
                         </div>
-                        <div class="button-group">
-                            <a href="<?php echo htmlspecialchars($result); ?>" class="mui-button" download="qr-code.png">
-                                <i class="fas fa-download"></i> QR 코드 다운로드
-                            </a>
-                            <button class="mui-button copy-button" data-clipboard-text="<?php echo htmlspecialchars($input); ?>">
-                                <i class="fas fa-copy"></i> 텍스트 복사
-                            </button>
-                        </div>
+                        <button class="mui-button copy-button" data-clipboard-text="<?php echo htmlspecialchars($result); ?>">
+                            <i class="fas fa-copy"></i> 복사하기
+                        </button>
                     </div>
                 <?php endif; ?>
             </div>
@@ -72,10 +100,10 @@ include_once 'includes/header.php';
             </div>
             <div class="mui-card-content">
                 <ul class="help-list">
-                    <li>텍스트, URL, 전화번호 등을 입력하여 QR 코드를 생성할 수 있습니다.</li>
-                    <li>생성된 QR 코드는 다운로드하여 사용할 수 있습니다.</li>
-                    <li>입력한 텍스트는 복사하기 버튼으로 클립보드에 복사할 수 있습니다.</li>
-                    <li>QR 코드는 300x300 픽셀 크기로 생성됩니다.</li>
+                    <li>포맷팅: JSON 데이터를 보기 좋게 들여쓰기하여 표시합니다.</li>
+                    <li>압축: JSON 데이터에서 불필요한 공백을 제거합니다.</li>
+                    <li>검증: JSON 데이터의 유효성을 검사하고 구조를 보여줍니다.</li>
+                    <li>복사하기 버튼을 클릭하면 결과를 클립보드에 복사할 수 있습니다.</li>
                 </ul>
             </div>
         </div>
@@ -127,7 +155,6 @@ include_once 'includes/header.php';
 
 .result-section {
     margin-top: 2rem;
-    text-align: center;
 }
 
 .result-section h3 {
@@ -135,18 +162,18 @@ include_once 'includes/header.php';
     margin-bottom: 1rem;
 }
 
-.qr-box {
-    background-color: #fff;
+.result-box {
+    background-color: #f8f9fa;
     padding: 1rem;
     border-radius: 4px;
     margin-bottom: 1rem;
-    display: inline-block;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-.qr-image {
-    max-width: 300px;
-    height: auto;
+.result-box pre {
+    margin: 0;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-family: monospace;
 }
 
 .help-list {

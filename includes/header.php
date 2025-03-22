@@ -60,6 +60,8 @@ $additional_js = $additional_js ?? [];
                     <ul class="submenu">
                         <li><a href="/url-encoder.php">URL 인코더/디코더</a></li>
                         <li><a href="/jwt-decoder.php">JWT 디코더</a></li>
+                        <li><a href="/base64-converter.php">Base64 인코더/디코더</a></li>
+                        <li><a href="/hash-generator.php">Hash 생성기</a></li>
                     </ul>
                 </li>
                 <li class="has-submenu">
@@ -67,6 +69,10 @@ $additional_js = $additional_js ?? [];
                     <ul class="submenu">
                         <li><a href="/hex-image.php">HEX 이미지 변환기</a></li>
                         <li><a href="/curl-converter.php">CURL 변환기</a></li>
+                        <li><a href="/qr-generator.php">QR 코드 생성기</a></li>
+                        <li><a href="/timestamp-converter.php">타임스탬프 변환기</a></li>
+                        <li><a href="/markdown-converter.php">Markdown 뷰어/변환기</a></li>
+                        
                     </ul>
                 </li>
                 <li class="has-submenu">
@@ -83,6 +89,7 @@ $additional_js = $additional_js ?? [];
                     <ul class="submenu">
                         <li><a href="/tls-checker.php">TLS 버전 체크</a></li>
                         <li><a href="/ip-info.php">IP 정보 확인</a></li>
+                        <li><a href="/cidr-calculator.php">IP 주소 대역 계산기</a></li>
                         <li><a href="/firewall-check.php">방화벽 체크</a></li>
                     </ul>
                 </li>
@@ -91,6 +98,7 @@ $additional_js = $additional_js ?? [];
                     <ul class="submenu">
                         <li><a href="/xml-validator.php">XML 검증기</a></li>
                         <li><a href="/text-compare.php">텍스트 비교</a></li>
+                        <li><a href="/char-counter.php">문자 수 세기</a></li>
                         <li><a href="/cron-examples.php">Cron 예제</a></li>
                         <li><a href="/regex-examples.php">정규식 예제</a></li>
                     </ul>
@@ -99,6 +107,15 @@ $additional_js = $additional_js ?? [];
                     <a href="#">디자인 도구</a>
                     <ul class="submenu">
                         <li><a href="/design/rgb-picker.php">RGB 코드 피커</a></li>
+                        <li><a href="/design/color-palette.php">웹 색상 팔레트 추천기</a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">텍스트 도구</a>
+                    <ul class="submenu">
+                        <li><a href="/text-compare.php">텍스트 비교</a></li>
+                        <li><a href="/char-counter.php">문자 수 세기</a></li>
+                        <li><a href="/text/html-entities.php">HTML 특수문자 변환기</a></li>
                     </ul>
                 </li>
             </ul>
