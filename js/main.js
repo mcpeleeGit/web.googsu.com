@@ -73,4 +73,10 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+
+    // 즐겨찾기 기능 초기화
+    if (typeof FavoritesManager !== 'undefined') {
+        const favoritesManager = new FavoritesManager();
+        favoritesManager.init();
+    }
 }); 

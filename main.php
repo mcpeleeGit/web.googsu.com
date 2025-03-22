@@ -259,43 +259,43 @@ include 'includes/header.php';
                 </div>
 
                 <!-- 단위 환산 도구 -->
-                <div class="tool-card" data-tool-id="length">
+                <div class="tool-card" data-tool-id="length-converter">
                     <div class="tool-icon">📏</div>
                     <h3>길이 변환</h3>
-                    <p>다양한 길이 단위를 서로 변환할 수 있습니다.</p>
+                    <p>밀리미터, 센티미터, 미터, 킬로미터, 인치, 피트 등 다양한 길이 단위를 변환합니다.</p>
                     <div class="tool-actions">
-                        <a href="/length.php" class="tool-link">사용하기 →</a>
-                        <button class="favorite-btn" data-tool-id="length">☆</button>
+                        <a href="/unit/length.php" class="tool-link">사용하기 →</a>
+                        <button class="favorite-btn" data-tool-id="length-converter">☆</button>
                     </div>
                 </div>
 
-                <div class="tool-card" data-tool-id="weight">
+                <div class="tool-card" data-tool-id="weight-converter">
                     <div class="tool-icon">⚖️</div>
                     <h3>무게 변환</h3>
-                    <p>다양한 무게 단위를 서로 변환할 수 있습니다.</p>
+                    <p>밀리그램, 그램, 킬로그램, 톤, 온스, 파운드 등 다양한 무게 단위를 변환합니다.</p>
                     <div class="tool-actions">
-                        <a href="/weight.php" class="tool-link">사용하기 →</a>
-                        <button class="favorite-btn" data-tool-id="weight">☆</button>
+                        <a href="/unit/weight.php" class="tool-link">사용하기 →</a>
+                        <button class="favorite-btn" data-tool-id="weight-converter">☆</button>
                     </div>
                 </div>
 
-                <div class="tool-card" data-tool-id="temperature">
+                <div class="tool-card" data-tool-id="temperature-converter">
                     <div class="tool-icon">🌡️</div>
                     <h3>온도 변환</h3>
-                    <p>섭씨, 화씨, 켈빈 온도를 서로 변환할 수 있습니다.</p>
+                    <p>섭씨, 화씨, 켈빈 등 다양한 온도 단위를 변환합니다.</p>
                     <div class="tool-actions">
-                        <a href="/temperature.php" class="tool-link">사용하기 →</a>
-                        <button class="favorite-btn" data-tool-id="temperature">☆</button>
+                        <a href="/unit/temperature.php" class="tool-link">사용하기 →</a>
+                        <button class="favorite-btn" data-tool-id="temperature-converter">☆</button>
                     </div>
                 </div>
 
-                <div class="tool-card" data-tool-id="area">
+                <div class="tool-card" data-tool-id="area-converter">
                     <div class="tool-icon">📐</div>
                     <h3>면적 변환</h3>
-                    <p>다양한 면적 단위를 서로 변환할 수 있습니다.</p>
+                    <p>제곱미터, 평, 에이커, 헥타르 등 다양한 면적 단위를 변환합니다.</p>
                     <div class="tool-actions">
-                        <a href="/area.php" class="tool-link">사용하기 →</a>
-                        <button class="favorite-btn" data-tool-id="area">☆</button>
+                        <a href="/unit/area.php" class="tool-link">사용하기 →</a>
+                        <button class="favorite-btn" data-tool-id="area-converter">☆</button>
                     </div>
                 </div>
 
@@ -303,19 +303,19 @@ include 'includes/header.php';
                 <div class="tool-card" data-tool-id="rgb-picker">
                     <div class="tool-icon">🎨</div>
                     <h3>RGB 코드 피커</h3>
-                    <p>색상을 선택하고 RGB, HEX 코드를 확인할 수 있습니다.</p>
+                    <p>색상을 선택하고 RGB, HEX, HSL 등 다양한 형식의 색상 코드를 확인할 수 있습니다.</p>
                     <div class="tool-actions">
-                        <a href="/rgb-picker.php" class="tool-link">사용하기 →</a>
+                        <a href="/design/rgb-picker.php" class="tool-link">사용하기 →</a>
                         <button class="favorite-btn" data-tool-id="rgb-picker">☆</button>
                     </div>
                 </div>
 
                 <div class="tool-card" data-tool-id="color-palette">
-                    <div class="tool-icon">🖌️</div>
+                    <div class="tool-icon">🎨</div>
                     <h3>웹 색상 팔레트 추천기</h3>
-                    <p>웹 디자인에 어울리는 색상 조합을 추천해드립니다.</p>
+                    <p>기본 색상을 선택하여 조화로운 색상 팔레트를 생성할 수 있습니다.</p>
                     <div class="tool-actions">
-                        <a href="/color-palette.php" class="tool-link">사용하기 →</a>
+                        <a href="/design/color-palette.php" class="tool-link">사용하기 →</a>
                         <button class="favorite-btn" data-tool-id="color-palette">☆</button>
                     </div>
                 </div>

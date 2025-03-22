@@ -47,11 +47,6 @@ $additional_js = $additional_js ?? [];
     <!-- End Google Tag Manager (noscript) -->
     <header>
         <nav>
-            <div class="hamburger-menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
             <ul class="nav-links">
                 <li><a href="/main.php">홈</a></li>
                 <li><a href="/calculator.php">공학용 계산기</a></li>
@@ -78,10 +73,10 @@ $additional_js = $additional_js ?? [];
                 <li class="has-submenu">
                     <a href="#">단위 환산</a>
                     <ul class="submenu">
-                        <li><a href="/length.php">길이 변환</a></li>
-                        <li><a href="/weight.php">무게 변환</a></li>
-                        <li><a href="/temperature.php">온도 변환</a></li>
-                        <li><a href="/area.php">면적 변환</a></li>
+                        <li><a href="/unit/length.php">길이 변환</a></li>
+                        <li><a href="/unit/weight.php">무게 변환</a></li>
+                        <li><a href="/unit/temperature.php">온도 변환</a></li>
+                        <li><a href="/unit/area.php">면적 변환</a></li>
                     </ul>
                 </li>
                 <li class="has-submenu">
@@ -106,8 +101,8 @@ $additional_js = $additional_js ?? [];
                 <li class="has-submenu">
                     <a href="#">디자인 도구</a>
                     <ul class="submenu">
-                        <li><a href="/rgb-picker.php">RGB 코드 피커</a></li>
-                        <li><a href="/color-palette.php">웹 색상 팔레트 추천기</a></li>
+                        <li><a href="/design/rgb-picker.php">RGB 코드 피커</a></li>
+                        <li><a href="/design/color-palette.php">웹 색상 팔레트 추천기</a></li>
                     </ul>
                 </li>
                 <li class="has-submenu">
