@@ -51,6 +51,7 @@ class Route
 
     private static function routeReact($reqUri)
     {
-        require('main.php');
+        header("Location: main.php");
+        exit;
     }
 }

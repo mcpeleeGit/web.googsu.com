@@ -1,11 +1,13 @@
 <?php
 require_once __DIR__ . '/functions.php';
+require_once __DIR__ . '/language.php';
 $page_title = $page_title ?? '유틸리티 모음';
 $additional_css = $additional_css ?? [];
 $additional_js = $additional_js ?? [];
+$current_lang = $current_lang ?? 'ko';
 ?>
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="<?php echo $current_lang; ?>">
 <head>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-0QSQ2VE1QR"></script>
@@ -46,76 +48,86 @@ $additional_js = $additional_js ?? [];
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
     <header>
-        <nav>
-            <ul class="nav-links">
-                <li><a href="/main.php">홈</a></li>
-                <li><a href="/calculator.php">공학용 계산기</a></li>
-                <li class="has-submenu">
-                    <a href="#">인코더/디코더</a>
-                    <ul class="submenu">
-                        <li><a href="/url-encoder.php">URL 인코더/디코더</a></li>
-                        <li><a href="/jwt-decoder.php">JWT 디코더</a></li>
-                        <li><a href="/base64-converter.php">Base64 인코더/디코더</a></li>
-                        <li><a href="/hash-generator.php">Hash 생성기</a></li>
-                    </ul>
-                </li>
-                <li class="has-submenu">
-                    <a href="#">변환기</a>
-                    <ul class="submenu">
-                        <li><a href="/hex-image.php">HEX 이미지 변환기</a></li>
-                        <li><a href="/curl-converter.php">CURL 변환기</a></li>
-                        <li><a href="/qr-generator.php">QR 코드 생성기</a></li>
-                        <li><a href="/timestamp-converter.php">타임스탬프 변환기</a></li>
-                        <li><a href="/markdown-converter.php">Markdown 뷰어/변환기</a></li>
-                        
-                    </ul>
-                </li>
-                <li class="has-submenu">
-                    <a href="#">단위 환산</a>
-                    <ul class="submenu">
-                        <li><a href="/unit/length.php">길이 변환</a></li>
-                        <li><a href="/unit/weight.php">무게 변환</a></li>
-                        <li><a href="/unit/temperature.php">온도 변환</a></li>
-                        <li><a href="/unit/area.php">면적 변환</a></li>
-                    </ul>
-                </li>
-                <li class="has-submenu">
-                    <a href="#">보안 도구</a>
-                    <ul class="submenu">
-                        <li><a href="/tls-checker.php">TLS 버전 체크</a></li>
-                        <li><a href="/ip-info.php">IP 정보 확인</a></li>
-                        <li><a href="/cidr-calculator.php">IP 주소 대역 계산기</a></li>
-                        <li><a href="/firewall-check.php">방화벽 체크</a></li>
-                    </ul>
-                </li>
-                <li class="has-submenu">
-                    <a href="#">개발자 도구</a>
-                    <ul class="submenu">
-                        <li><a href="/json-formatter.php">JSON 포맷터/뷰어</a></li>
-                        <li><a href="/xml-validator.php">XML 검증기</a></li>
-                        <li><a href="/qr-generator.php">QR 코드 생성기</a></li>
-                        <li><a href="/cron-examples.php">Cron 예제</a></li>
-                        <li><a href="/regex-examples.php">정규식 예제</a></li>
-                    </ul>
-                </li>
-                <li class="has-submenu">
-                    <a href="#">디자인 도구</a>
-                    <ul class="submenu">
-                        <li><a href="/design/rgb-picker.php">RGB 코드 피커</a></li>
-                        <li><a href="/design/color-palette.php">웹 색상 팔레트 추천기</a></li>
-                    </ul>
-                </li>
-                <li class="has-submenu">
-                    <a href="#">텍스트 도구</a>
-                    <ul class="submenu">
-                        <li><a href="/text-compare.php">텍스트 비교</a></li>
-                        <li><a href="/char-counter.php">문자 수 세기</a></li>
-                        <li><a href="/html-entities.php">HTML 특수문자 변환기</a></li>
-                        <li><a href="/markdown-converter.php">Markdown 뷰어/변환기</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
+        <div class="header-right">
+
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="/main.php"><?php echo __('menu.home'); ?></a></li>
+                    <li><a href="/calculator.php"><?php echo __('menu.calculator'); ?></a></li>
+                    <li class="has-submenu">
+                        <a href="#"><?php echo __('menu.encoder_decoder'); ?></a>
+                        <ul class="submenu">
+                            <li><a href="/url-encoder.php"><?php echo __('menu.url_encoder'); ?></a></li>
+                            <li><a href="/jwt-decoder.php"><?php echo __('menu.jwt_decoder'); ?></a></li>
+                            <li><a href="/base64-converter.php"><?php echo __('menu.base64_converter'); ?></a></li>
+                            <li><a href="/hash-generator.php"><?php echo __('menu.hash_generator'); ?></a></li>
+                        </ul>
+                    </li>
+                    <li class="has-submenu">
+                        <a href="#"><?php echo __('menu.converters'); ?></a>
+                        <ul class="submenu">
+                            <li><a href="/hex-image.php"><?php echo __('menu.hex_image'); ?></a></li>
+                            <li><a href="/curl-converter.php"><?php echo __('menu.curl_converter'); ?></a></li>
+                            <li><a href="/qr-generator.php"><?php echo __('menu.qr_generator'); ?></a></li>
+                            <li><a href="/timestamp-converter.php"><?php echo __('menu.timestamp_converter'); ?></a></li>
+                            <li><a href="/markdown-converter.php"><?php echo __('menu.markdown_converter'); ?></a></li>
+                        </ul>
+                    </li>
+                    <li class="has-submenu">
+                        <a href="#"><?php echo __('menu.unit_converter'); ?></a>
+                        <ul class="submenu">
+                            <li><a href="/unit/length.php"><?php echo __('menu.length'); ?></a></li>
+                            <li><a href="/unit/weight.php"><?php echo __('menu.weight'); ?></a></li>
+                            <li><a href="/unit/temperature.php"><?php echo __('menu.temperature'); ?></a></li>
+                            <li><a href="/unit/area.php"><?php echo __('menu.area'); ?></a></li>
+                        </ul>
+                    </li>
+                    <li class="has-submenu">
+                        <a href="#"><?php echo __('menu.security_tools'); ?></a>
+                        <ul class="submenu">
+                            <li><a href="/tls-checker.php"><?php echo __('menu.tls_checker'); ?></a></li>
+                            <li><a href="/ip-info.php"><?php echo __('menu.ip_info'); ?></a></li>
+                            <li><a href="/cidr-calculator.php"><?php echo __('menu.cidr_calculator'); ?></a></li>
+                            <li><a href="/firewall-check.php"><?php echo __('menu.firewall_check'); ?></a></li>
+                        </ul>
+                    </li>
+                    <li class="has-submenu">
+                        <a href="#"><?php echo __('menu.dev_tools'); ?></a>
+                        <ul class="submenu">
+                            <li><a href="/json-formatter.php"><?php echo __('menu.json_formatter'); ?></a></li>
+                            <li><a href="/xml-validator.php"><?php echo __('menu.xml_validator'); ?></a></li>
+                            <li><a href="/qr-generator.php"><?php echo __('menu.qr_generator'); ?></a></li>
+                            <li><a href="/cron-examples.php"><?php echo __('menu.cron_examples'); ?></a></li>
+                            <li><a href="/regex-examples.php"><?php echo __('menu.regex_examples'); ?></a></li>
+                        </ul>
+                    </li>
+                    <li class="has-submenu">
+                        <a href="#"><?php echo __('menu.design_tools'); ?></a>
+                        <ul class="submenu">
+                            <li><a href="/design/rgb-picker.php"><?php echo __('menu.rgb_picker'); ?></a></li>
+                            <li><a href="/design/color-palette.php"><?php echo __('menu.color_palette'); ?></a></li>
+                        </ul>
+                    </li>
+                    <li class="has-submenu">
+                        <a href="#"><?php echo __('menu.text_tools'); ?></a>
+                        <ul class="submenu">
+                            <li><a href="/text-compare.php"><?php echo __('menu.text_compare'); ?></a></li>
+                            <li><a href="/char-counter.php"><?php echo __('menu.char_counter'); ?></a></li>
+                            <li><a href="/html-entities.php"><?php echo __('menu.html_entities'); ?></a></li>
+                            <li><a href="/markdown-converter.php"><?php echo __('menu.markdown_converter'); ?></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <div class="lang-toggle">
+                <a href="?lang=ko" class="lang-btn <?php echo $current_lang === 'ko' ? 'active' : ''; ?>" title="한국어">
+                    <span class="flag-icon">🇰🇷</span>
+                </a>
+                <a href="?lang=en" class="lang-btn <?php echo $current_lang === 'en' ? 'active' : ''; ?>" title="English">
+                    <span class="flag-icon">🇺🇸</span>
+                </a>
+            </div>
+        </div>
     </header>
 </body>
 </html> 
