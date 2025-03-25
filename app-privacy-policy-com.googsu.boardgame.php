@@ -5,11 +5,11 @@ $additional_css = ['/css/text-compare.css'];
 
 <div class="container">
     <div class="text-compare-container">
-        <h1>앱 개인정보 처리방침</h1>
+        <h1>보드게임유틸(com.googsu.boardgame) 앱 개인정보 처리방침</h1>
         
         <div class="mui-card">
             <div class="mui-card-content">
-                <p class="last-updated">최종 수정일: 2024년 3월 15일</p>
+                <p class="last-updated">최종 수정일: 2024년 3월 25일</p>
                 
                 <section class="policy-section">
                     <h2>1. 개인정보 수집 및 이용 목적</h2>
@@ -53,7 +53,7 @@ $additional_css = ['/css/text-compare.css'];
                     <h2>7. 문의하기</h2>
                     <p>본 개인정보 처리방침에 대한 문의사항이 있으시면 아래의 연락처로 문의해 주시기 바랍니다.</p>
                     <ul>
-                        <li>이메일: privacy@googsu.com</li>
+                        <li>이메일: Dong-Ha Lee <a href="mailto:mcpelee@gmail.com">mcpelee@gmail.com</a></li>
                     </ul>
                 </section>
             </div>
