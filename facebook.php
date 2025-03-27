@@ -199,6 +199,10 @@
         <div class="messenger-section">
             <h3>페이스북 메신저로 메시지 보내기</h3>
             <div class="input-group">
+                <label for="recipientPSID">받는 사람 PSID</label>
+                <input type="text" id="recipientPSID" class="share-input" placeholder="받는 사람의 PSID를 입력하세요">
+            </div>
+            <div class="input-group">
                 <label for="messageText">메시지 내용</label>
                 <textarea id="messageText" class="share-input" placeholder="메시지 내용을 입력하세요"></textarea>
             </div>
@@ -354,56 +358,41 @@
 
         // 메시지 보내기 버튼 클릭 이벤트
         document.getElementById('sendMessageBtn').addEventListener('click', function() {
+            const recipientPSID = document.getElementById('recipientPSID').value;
             const messageText = document.getElementById('messageText').value;
+
+            if (!recipientPSID) {
+                alert('받는 사람의 PSID를 입력해주세요.');
+                return;
+            }
 
             if (!messageText) {
                 alert('메시지 내용을 입력해주세요.');
                 return;
             }
 
-            // 페이스북 로그인 상태 확인
-            FB.getLoginStatus(function(response) {
-                if (response.status === 'connected') {
-                    // 로그인된 상태에서 메시지 전송
-                    FB.ui({
-                        method: 'send',
-                        link: window.location.href,
-                        quote: messageText,
-                        display: 'popup'
-                    }, function(response) {
-                        if (response && !response.error_message) {
-                            alert('메시지가 전송되었습니다!');
-                            document.getElementById('messageText').value = '';
-                        } else {
-                            alert('메시지 전송에 실패했습니다. 다시 시도해주세요.');
-                        }
-                    });
+            // 서버로 메시지 전송 요청
+            fetch('send_message.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    recipient_id: recipientPSID,
+                    message: messageText
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('메시지가 전송되었습니다!');
+                    document.getElementById('messageText').value = '';
                 } else {
-                    // 로그인이 필요한 경우
-                    FB.login(function(response) {
-                        if (response.status === 'connected') {
-                            // 로그인 성공 후 메시지 전송
-                            FB.ui({
-                                method: 'send',
-                                link: window.location.href,
-                                quote: messageText,
-                                display: 'popup'
-                            }, function(response) {
-                                if (response && !response.error_message) {
-                                    alert('메시지가 전송되었습니다!');
-                                    document.getElementById('messageText').value = '';
-                                } else {
-                                    alert('메시지 전송에 실패했습니다. 다시 시도해주세요.');
-                                }
-                            });
-                        } else {
-                            alert('페이스북 로그인이 필요합니다.');
-                        }
-                    }, {
-                        scope: 'email,public_profile,pages_messaging',
-                        display: 'popup'
-                    });
+                    alert('메시지 전송에 실패했습니다: ' + data.error);
                 }
+            })
+            .catch(error => {
+                alert('메시지 전송 중 오류가 발생했습니다: ' + error);
             });
         });
 
