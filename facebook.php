@@ -265,7 +265,8 @@
             FB.login(function(response) {
                 updateLoginStatus(response);
             }, {
-                scope: 'email,public_profile,pages_messaging'
+                scope: 'email,public_profile,pages_messaging',
+                display: 'popup'
             });
         });
 
@@ -314,7 +315,8 @@
                     FB.ui({
                         method: 'send',
                         link: shareData.url,
-                        quote: shareData.description
+                        quote: shareData.description,
+                        display: 'popup'
                     }, function(response) {
                         if (response && !response.error_message) {
                             alert('메신저로 공유되었습니다!');
@@ -330,7 +332,8 @@
                             FB.ui({
                                 method: 'send',
                                 link: shareData.url,
-                                quote: shareData.description
+                                quote: shareData.description,
+                                display: 'popup'
                             }, function(response) {
                                 if (response && !response.error_message) {
                                     alert('메신저로 공유되었습니다!');
@@ -342,7 +345,8 @@
                             alert('페이스북 로그인이 필요합니다.');
                         }
                     }, {
-                        scope: 'email,public_profile,pages_messaging'
+                        scope: 'email,public_profile,pages_messaging',
+                        display: 'popup'
                     });
                 }
             });
@@ -364,7 +368,8 @@
                     FB.ui({
                         method: 'send',
                         link: window.location.href,
-                        quote: messageText
+                        quote: messageText,
+                        display: 'popup'
                     }, function(response) {
                         if (response && !response.error_message) {
                             alert('메시지가 전송되었습니다!');
@@ -381,7 +386,8 @@
                             FB.ui({
                                 method: 'send',
                                 link: window.location.href,
-                                quote: messageText
+                                quote: messageText,
+                                display: 'popup'
                             }, function(response) {
                                 if (response && !response.error_message) {
                                     alert('메시지가 전송되었습니다!');
@@ -394,7 +400,8 @@
                             alert('페이스북 로그인이 필요합니다.');
                         }
                     }, {
-                        scope: 'email,public_profile,pages_messaging'
+                        scope: 'email,public_profile,pages_messaging',
+                        display: 'popup'
                     });
                 }
             });
