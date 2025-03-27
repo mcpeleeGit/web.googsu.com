@@ -276,16 +276,6 @@ $login_url = 'https://www.facebook.com/v18.0/dialog/oauth?' . http_build_query([
             }
         }
 
-        // 로그인 버튼 클릭 이벤트
-        document.getElementById('loginBtn').addEventListener('click', function() {
-            FB.login(function(response) {
-                updateLoginStatus(response);
-            }, {
-                scope: 'email,public_profile,pages_messaging',
-                display: 'popup'
-            });
-        });
-
         // 로그아웃 버튼 클릭 이벤트
         document.getElementById('logoutBtn')?.addEventListener('click', function() {
             FB.logout(function(response) {
