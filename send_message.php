@@ -2,7 +2,7 @@
 header('Content-Type: application/json');
 
 // Facebook 앱 설정
-$access_token = "37834a86ccf558710269fe9e2c3fafce"; // Facebook 앱의 영구 액세스 토큰
+$access_token = "EAArNXWaHsAcBO301nZA24m5ApNRISOAOz6zqhzHy3ntqAeSfZAodChNjr2ZABwbF3Gj0vZAhn2mzCDB8foaisMFzACvkDERZALGF3McZCVfBRG7uONiyW2ZAB67gqA1hu3BieZCf16KDwC5sn1avP0bwZBSNAjyev5b6JVkOHrJeWZAZBIZB1KYVxut4smCSKR9JywEa2BwoxR8QqroPKNU7"; // Facebook 앱의 영구 액세스 토큰
 
 // POST 데이터 받기
 $input = json_decode(file_get_contents('php://input'), true);
