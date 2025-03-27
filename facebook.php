@@ -166,6 +166,54 @@ $login_url = 'https://www.facebook.com/v18.0/dialog/oauth?' . http_build_query([
         main.container .messenger-btn:hover {
             opacity: 0.9;
         }
+        .search-container {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        .search-btn {
+            background-color: #1877f2;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .search-results {
+            margin-top: 10px;
+            max-height: 200px;
+            overflow-y: auto;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 10px;
+        }
+        .user-result {
+            display: flex;
+            align-items: center;
+            padding: 8px;
+            border-bottom: 1px solid #eee;
+            cursor: pointer;
+        }
+        .user-result:hover {
+            background-color: #f5f5f5;
+        }
+        .user-result img {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        .user-result .user-info {
+            flex: 1;
+        }
+        .user-result .user-name {
+            font-weight: bold;
+        }
+        .user-result .user-id {
+            font-size: 12px;
+            color: #666;
+        }
     </style>
 </head>
 <body>
@@ -217,8 +265,16 @@ $login_url = 'https://www.facebook.com/v18.0/dialog/oauth?' . http_build_query([
         <div class="messenger-section">
             <h3>페이스북 메신저로 메시지 보내기</h3>
             <div class="input-group">
+                <label for="searchTerm">사용자 검색</label>
+                <div class="search-container">
+                    <input type="text" id="searchTerm" class="share-input" placeholder="이름이나 이메일로 검색">
+                    <button id="searchBtn" class="search-btn">검색</button>
+                </div>
+                <div id="searchResults" class="search-results"></div>
+            </div>
+            <div class="input-group">
                 <label for="recipientPSID">받는 사람 PSID</label>
-                <input type="text" id="recipientPSID" class="share-input" placeholder="받는 사람의 PSID를 입력하세요">
+                <input type="text" id="recipientPSID" class="share-input" placeholder="받는 사람의 PSID를 입력하세요" readonly>
             </div>
             <div class="input-group">
                 <label for="messageText">메시지 내용</label>
@@ -430,6 +486,62 @@ $login_url = 'https://www.facebook.com/v18.0/dialog/oauth?' . http_build_query([
             input.addEventListener('input', function() {
                 updatePreview(getShareData());
             });
+        });
+
+        // 검색 버튼 클릭 이벤트
+        document.getElementById('searchBtn').addEventListener('click', function() {
+            const searchTerm = document.getElementById('searchTerm').value;
+            if (!searchTerm) {
+                alert('검색어를 입력해주세요.');
+                return;
+            }
+
+            fetch('search_psid.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    search_term: searchTerm
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                const searchResults = document.getElementById('searchResults');
+                searchResults.innerHTML = '';
+
+                if (data.success && data.users.length > 0) {
+                    data.users.forEach(user => {
+                        const userElement = document.createElement('div');
+                        userElement.className = 'user-result';
+                        userElement.innerHTML = `
+                            <img src="${user.picture?.data?.url || 'default-avatar.png'}" alt="${user.name}">
+                            <div class="user-info">
+                                <div class="user-name">${user.name}</div>
+                                <div class="user-id">PSID: ${user.id}</div>
+                            </div>
+                        `;
+                        userElement.addEventListener('click', () => {
+                            document.getElementById('recipientPSID').value = user.id;
+                            searchResults.innerHTML = '';
+                            document.getElementById('searchTerm').value = '';
+                        });
+                        searchResults.appendChild(userElement);
+                    });
+                } else {
+                    searchResults.innerHTML = '<div class="no-results">검색 결과가 없습니다.</div>';
+                }
+            })
+            .catch(error => {
+                alert('검색 중 오류가 발생했습니다: ' + error);
+            });
+        });
+
+        // Enter 키로 검색 실행
+        document.getElementById('searchTerm').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                document.getElementById('searchBtn').click();
+            }
         });
     </script>
 </body>
