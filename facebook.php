@@ -197,12 +197,12 @@
         </div>
 
         <div class="messenger-section">
-            <h2>메신저로 메시지 보내기</h2>
-            <input type="text" id="recipientId" class="messenger-input" placeholder="받는 사람의 페이스북 ID를 입력하세요">
-            <textarea id="messageText" class="messenger-input" rows="4" placeholder="보낼 메시지를 입력하세요">안녕하세요! 페이스북 메신저 테스트입니다.</textarea>
-            <button id="sendMessageBtn" class="messenger-btn">
-                메시지 보내기
-            </button>
+            <h3>페이스북 메신저로 메시지 보내기</h3>
+            <div class="input-group">
+                <label for="messageText">메시지 내용</label>
+                <textarea id="messageText" class="share-input" placeholder="메시지 내용을 입력하세요"></textarea>
+            </div>
+            <button id="sendMessageBtn" class="primary-btn">메신저로 보내기</button>
         </div>
     </main>
 
@@ -350,13 +350,7 @@
 
         // 메시지 보내기 버튼 클릭 이벤트
         document.getElementById('sendMessageBtn').addEventListener('click', function() {
-            const recipientId = document.getElementById('recipientId').value;
             const messageText = document.getElementById('messageText').value;
-
-            if (!recipientId) {
-                alert('받는 사람의 페이스북 ID를 입력해주세요.');
-                return;
-            }
 
             if (!messageText) {
                 alert('메시지 내용을 입력해주세요.');
@@ -369,7 +363,6 @@
                     // 로그인된 상태에서 메시지 전송
                     FB.ui({
                         method: 'send',
-                        to: recipientId,
                         link: window.location.href,
                         quote: messageText
                     }, function(response) {
@@ -387,7 +380,6 @@
                             // 로그인 성공 후 메시지 전송
                             FB.ui({
                                 method: 'send',
-                                to: recipientId,
                                 link: window.location.href,
                                 quote: messageText
                             }, function(response) {
