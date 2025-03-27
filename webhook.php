@@ -1,7 +1,7 @@
 <?php
 // Facebook 앱 설정
-$verify_token = "your_verify_token"; // Webhook 검증용 토큰
-$access_token = "your_access_token"; // Facebook 앱의 영구 액세스 토큰
+$verify_token = "test"; // Webhook 검증용 토큰
+$access_token = "EAArNXWaHsAcBO301nZA24m5ApNRISOAOz6zqhzHy3ntqAeSfZAodChNjr2ZABwbF3Gj0vZAhn2mzCDB8foaisMFzACvkDERZALGF3McZCVfBRG7uONiyW2ZAB67gqA1hu3BieZCf16KDwC5sn1avP0bwZBSNAjyev5b6JVkOHrJeWZAZBIZB1KYVxut4smCSKR9JywEa2BwoxR8QqroPKNU7"; // Facebook 앱의 영구 액세스 토큰
 
 // Webhook 검증
 if (isset($_GET['hub_verify_token'])) {
