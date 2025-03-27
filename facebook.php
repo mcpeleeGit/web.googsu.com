@@ -214,6 +214,34 @@ $login_url = 'https://www.facebook.com/v18.0/dialog/oauth?' . http_build_query([
             font-size: 12px;
             color: #666;
         }
+        .my-psid-section {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f0f2f5;
+            border-radius: 4px;
+        }
+        .my-psid-section h4 {
+            margin: 0 0 10px 0;
+            color: #1877f2;
+        }
+        .recipient-container {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        .secondary-btn {
+            background-color: #e4e6eb;
+            color: #1877f2;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            white-space: nowrap;
+        }
+        .secondary-btn:hover {
+            background-color: #d8dadf;
+        }
     </style>
 </head>
 <body>
@@ -264,6 +292,17 @@ $login_url = 'https://www.facebook.com/v18.0/dialog/oauth?' . http_build_query([
 
         <div class="messenger-section">
             <h3>페이스북 메신저로 메시지 보내기</h3>
+            
+            <!-- 내 PSID 조회 섹션 -->
+            <div class="my-psid-section">
+                <h4>내 PSID 조회</h4>
+                <div class="input-group">
+                    <input type="text" id="myPSID" class="share-input" placeholder="내 PSID" readonly>
+                    <button id="getMyPSIDBtn" class="search-btn">내 PSID 조회</button>
+                </div>
+            </div>
+
+            <!-- 사용자 검색 섹션 -->
             <div class="input-group">
                 <label for="searchTerm">사용자 검색</label>
                 <div class="search-container">
@@ -272,10 +311,16 @@ $login_url = 'https://www.facebook.com/v18.0/dialog/oauth?' . http_build_query([
                 </div>
                 <div id="searchResults" class="search-results"></div>
             </div>
+
+            <!-- 받는 사람 선택 섹션 -->
             <div class="input-group">
                 <label for="recipientPSID">받는 사람 PSID</label>
-                <input type="text" id="recipientPSID" class="share-input" placeholder="받는 사람의 PSID를 입력하세요" readonly>
+                <div class="recipient-container">
+                    <input type="text" id="recipientPSID" class="share-input" placeholder="받는 사람의 PSID를 입력하세요" readonly>
+                    <button id="sendToMeBtn" class="secondary-btn">나에게 보내기</button>
+                </div>
             </div>
+
             <div class="input-group">
                 <label for="messageText">메시지 내용</label>
                 <textarea id="messageText" class="share-input" placeholder="메시지 내용을 입력하세요"></textarea>
@@ -542,6 +587,47 @@ $login_url = 'https://www.facebook.com/v18.0/dialog/oauth?' . http_build_query([
             if (e.key === 'Enter') {
                 document.getElementById('searchBtn').click();
             }
+        });
+
+        // 내 PSID 조회 버튼 클릭 이벤트
+        document.getElementById('getMyPSIDBtn').addEventListener('click', function() {
+            FB.getLoginStatus(function(response) {
+                if (response.status === 'connected') {
+                    FB.api('/me', {fields: 'id,name'}, function(response) {
+                        if (response.id) {
+                            document.getElementById('myPSID').value = response.id;
+                            alert('내 PSID가 복사되었습니다: ' + response.id);
+                        } else {
+                            alert('PSID 조회에 실패했습니다.');
+                        }
+                    });
+                } else {
+                    alert('페이스북 로그인이 필요합니다.');
+                }
+            });
+        });
+
+        // 나에게 보내기 버튼 클릭 이벤트
+        document.getElementById('sendToMeBtn').addEventListener('click', function() {
+            const myPSID = document.getElementById('myPSID').value;
+            if (!myPSID) {
+                alert('먼저 내 PSID를 조회해주세요.');
+                return;
+            }
+            document.getElementById('recipientPSID').value = myPSID;
+        });
+
+        // PSID 입력 필드 클릭 시 복사
+        document.getElementById('myPSID').addEventListener('click', function() {
+            this.select();
+            document.execCommand('copy');
+            alert('PSID가 복사되었습니다.');
+        });
+
+        document.getElementById('recipientPSID').addEventListener('click', function() {
+            this.select();
+            document.execCommand('copy');
+            alert('PSID가 복사되었습니다.');
         });
     </script>
 </body>
