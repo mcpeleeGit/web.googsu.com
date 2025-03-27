@@ -256,16 +256,12 @@ $login_url = 'https://www.facebook.com/v18.0/dialog/oauth?' . http_build_query([
         // 로그인 상태 업데이트 함수
         function updateLoginStatus(response) {
             const userInfo = document.querySelector('.user-info');
-            const loginBtn = document.getElementById('loginBtn');
-            const logoutBtn = document.getElementById('logoutBtn');
             const userName = document.getElementById('userName');
             const userProfilePic = document.getElementById('userProfilePic');
 
             if (response.status === 'connected') {
                 // 로그인된 상태
                 userInfo.style.display = 'flex';
-                loginBtn.style.display = 'none';
-                logoutBtn.style.display = 'block';
                 
                 // 사용자 정보 가져오기
                 FB.api('/me', {fields: 'name,picture'}, function(response) {
@@ -275,8 +271,6 @@ $login_url = 'https://www.facebook.com/v18.0/dialog/oauth?' . http_build_query([
             } else {
                 // 로그아웃 상태
                 userInfo.style.display = 'none';
-                loginBtn.style.display = 'block';
-                logoutBtn.style.display = 'none';
                 userName.textContent = '';
                 userProfilePic.src = '';
             }
@@ -293,9 +287,22 @@ $login_url = 'https://www.facebook.com/v18.0/dialog/oauth?' . http_build_query([
         });
 
         // 로그아웃 버튼 클릭 이벤트
-        document.getElementById('logoutBtn').addEventListener('click', function() {
+        document.getElementById('logoutBtn')?.addEventListener('click', function() {
             FB.logout(function(response) {
                 updateLoginStatus(response);
+                // 서버 로그아웃 처리
+                fetch('logout.php')
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            window.location.reload();
+                        } else {
+                            alert('로그아웃에 실패했습니다.');
+                        }
+                    })
+                    .catch(error => {
+                        alert('로그아웃 중 오류가 발생했습니다.');
+                    });
             });
         });
 
