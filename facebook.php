@@ -1,3 +1,18 @@
+<?php
+session_start();
+
+// Facebook 앱 설정
+$app_id = '3040550802927623';
+$redirect_uri = 'https://' . $_SERVER['HTTP_HOST'] . '/oauth_callback.php';
+
+// OAuth 로그인 URL 생성
+$login_url = 'https://www.facebook.com/v18.0/dialog/oauth?' . http_build_query([
+    'client_id' => $app_id,
+    'redirect_uri' => $redirect_uri,
+    'scope' => 'email,public_profile,pages_messaging',
+    'state' => bin2hex(random_bytes(16))
+]);
+?>
 <!DOCTYPE html>
 <html lang="kr">
 <head>
@@ -163,15 +178,18 @@
         <div class="login-section">
             <div id="loginStatus" class="login-status">
                 <div class="user-info" style="display: none;">
-                    <img id="userProfilePic" src="" alt="프로필 사진" style="width: 40px; height: 40px; border-radius: 50%; margin-right: 10px;">
-                    <span id="userName"></span>
+                    <img id="userProfilePic" src="<?php echo $_SESSION['fb_user_picture'] ?? ''; ?>" alt="프로필 사진" style="width: 40px; height: 40px; border-radius: 50%; margin-right: 10px;">
+                    <span id="userName"><?php echo $_SESSION['fb_user_name'] ?? ''; ?></span>
                 </div>
-                <button id="loginBtn" class="login-btn">
-                    페이스북 로그인
-                </button>
-                <button id="logoutBtn" class="login-btn" style="display: none;">
-                    로그아웃
-                </button>
+                <?php if (!isset($_SESSION['fb_access_token'])): ?>
+                    <a href="<?php echo htmlspecialchars($login_url); ?>" class="login-btn">
+                        페이스북 로그인
+                    </a>
+                <?php else: ?>
+                    <button id="logoutBtn" class="login-btn">
+                        로그아웃
+                    </button>
+                <?php endif; ?>
             </div>
         </div>
 
