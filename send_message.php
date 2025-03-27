@@ -42,24 +42,38 @@ $data = [
     'message' => ['text' => $message]
 ];
 
-$options = [
-    'http' => [
-        'method' => 'POST',
-        'header' => [
-            'Content-Type: application/json',
-            'Authorization: Bearer ' . $access_token
-        ],
-        'content' => json_encode($data)
-    ]
-];
+// cURL 초기화
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, $url);
+curl_setopt($ch, CURLOPT_POST, 1);
+curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_HTTPHEADER, [
+    'Content-Type: application/json',
+    'Authorization: Bearer ' . $access_token
+]);
 
-$context = stream_context_create($options);
-$result = file_get_contents($url, false, $context);
+// 요청 실행
+$result = curl_exec($ch);
 
-if ($result === FALSE) {
+// cURL 에러 체크
+if (curl_errno($ch)) {
     echo json_encode([
         'success' => false,
-        'error' => '메시지 전송에 실패했습니다: ' . error_get_last()['message']
+        'error' => '메시지 전송에 실패했습니다: ' . curl_error($ch)
+    ]);
+    curl_close($ch);
+    exit;
+}
+
+// HTTP 상태 코드 체크
+$http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+curl_close($ch);
+
+if ($http_code !== 200) {
+    echo json_encode([
+        'success' => false,
+        'error' => '메시지 전송에 실패했습니다. HTTP 상태 코드: ' . $http_code
     ]);
     exit;
 }
