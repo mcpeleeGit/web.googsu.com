@@ -6,7 +6,7 @@
     <meta name="description" content="Googsu의 JWT 디코더를 사용하여 JWT 토큰을 쉽게 디코딩하세요.">
     <meta property="og:title" content="Googsu JWT 디코더">
     <meta property="og:description" content="Googsu의 JWT 디코더를 사용하여 JWT 토큰을 쉽게 디코딩하세요.">
-    <meta property="og:url" content="https://googsu.com/003-encoder/jwt">
+    <meta property="og:url" content="https://googsu.com/002-text-tools/jwt">
     <meta property="og:image" content="https://googsu.com/images/jwt-og-image.png">
     <style>
         .jwt-decoder-container {

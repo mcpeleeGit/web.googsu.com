@@ -6,7 +6,7 @@
     <meta name="description" content="Googsu의 URL 인코더/디코더를 사용하여 URL 문자열을 인코딩하거나 디코딩하세요.">
     <meta property="og:title" content="Googsu URL 인코더/디코더">
     <meta property="og:description" content="Googsu의 URL 인코더/디코더를 사용하여 URL 문자열을 인코딩하거나 디코딩하세요.">
-    <meta property="og:url" content="https://googsu.com/003-encoder/url">
+    <meta property="og:url" content="https://googsu.com/002-text-tools/url">
     <meta property="og:image" content="https://googsu.com/images/url-og-image.png">
     <style>
         .url-encoder-container {

@@ -6,7 +6,7 @@
     <meta name="description" content="Googsu의 Base64 인코더/디코더를 사용하여 텍스트를 인코딩하거나 디코딩하세요.">
     <meta property="og:title" content="Googsu Base64 인코더/디코더">
     <meta property="og:description" content="Googsu의 Base64 인코더/디코더를 사용하여 텍스트를 인코딩하거나 디코딩하세요.">
-    <meta property="og:url" content="https://googsu.com/003-encoder/base64">
+    <meta property="og:url" content="https://googsu.com/002-text-tools/base64">
     <meta property="og:image" content="https://googsu.com/images/base64-og-image.png">
     <style>
         .base64-encoder-container {
