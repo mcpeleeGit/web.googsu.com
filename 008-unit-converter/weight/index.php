@@ -18,17 +18,19 @@
 
         .input-group {
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
             gap: 10px;
             margin-bottom: 20px;
         }
 
-        .input-group input {
-            padding: 10px;
-            border: 1px solid #dee2e6;
-            border-radius: 8px;
-            font-size: 16px;
-            width: 100%;
+        .input-group label {
+            flex: 1;
+        }
+
+        .input-group input, .input-group select {
+            flex: 2;
+            padding: 15px;
+            font-size: 18px;
         }
 
         .btn {
@@ -46,11 +48,19 @@
         }
 
         .result {
-            background: #f8f9fa;
-            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .result-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
             border: 1px solid #dee2e6;
             border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            background: #f8f9fa;
         }
     </style>
 </head>
@@ -61,11 +71,8 @@
             <div class="converter-container">
                 <div class="input-group">
                     <label for="weightInput">무게 입력:</label>
-                    <input type="number" id="weightInput" placeholder="예: 100">
-                </div>
-                <div class="input-group">
-                    <label for="unitSelect">단위 선택:</label>
-                    <select id="unitSelect">
+                    <input type="number" id="weightInput" placeholder="예: 100" oninput="convertWeight()">
+                    <select id="unitSelect" onchange="convertWeight()">
                         <option value="kilograms">킬로그램</option>
                         <option value="grams">그램</option>
                         <option value="milligrams">밀리그램</option>
@@ -74,11 +81,10 @@
                         <option value="stones">스톤</option>
                     </select>
                 </div>
-                <button class="btn" onclick="convertWeight()">변환</button>
                 <div class="result" id="conversionResult">
-                    <h3>결과</h3>
-                    <pre id="resultText">무게를 입력하고 단위를 선택한 후 '변환' 버튼을 클릭하세요.</pre>
+                    <!-- Conversion results will be dynamically inserted here -->
                 </div>
+                <button class="btn" onclick="showUnitInfo()">ℹ️ 단위 설명 보기</button>
             </div>
         </div>
     </div>
@@ -86,40 +92,50 @@
     <script>
         function convertWeight() {
             const weightInput = parseFloat(document.getElementById('weightInput').value);
-            const unitSelect = document.getElementById('unitSelect').value;
-            const resultText = document.getElementById('resultText');
+            const inputUnit = document.getElementById('unitSelect').value;
+            const resultContainer = document.getElementById('conversionResult');
 
             if (isNaN(weightInput)) {
-                resultText.textContent = '유효한 무게를 입력하세요.';
+                resultContainer.innerHTML = '<div class="result-item">유효한 무게를 입력하세요.</div>';
                 return;
             }
 
-            // 무게 변환 로직 (예시)
-            let convertedWeight;
-            switch (unitSelect) {
-                case 'kilograms':
-                    convertedWeight = weightInput;
-                    break;
-                case 'grams':
-                    convertedWeight = weightInput * 1000;
-                    break;
-                case 'milligrams':
-                    convertedWeight = weightInput * 1000000;
-                    break;
-                case 'pounds':
-                    convertedWeight = weightInput * 2.20462;
-                    break;
-                case 'ounces':
-                    convertedWeight = weightInput * 35.274;
-                    break;
-                case 'stones':
-                    convertedWeight = weightInput * 0.157473;
-                    break;
-                default:
-                    convertedWeight = weightInput;
-            }
+            const conversionFactors = {
+                kilograms: 1,
+                grams: 1000,
+                milligrams: 1000000,
+                pounds: 2.20462,
+                ounces: 35.274,
+                stones: 0.157473
+            };
 
-            resultText.textContent = `변환된 무게: ${convertedWeight.toFixed(2)} ${unitSelect}`;
+            const unitNames = {
+                kilograms: '킬로그램',
+                grams: '그램',
+                milligrams: '밀리그램',
+                pounds: '파운드',
+                ounces: '온스',
+                stones: '스톤'
+            };
+
+            const weightInKilograms = weightInput / conversionFactors[inputUnit];
+
+            const results = Object.keys(conversionFactors).map(unit => {
+                const convertedWeight = weightInKilograms * conversionFactors[unit];
+                return `<div class="result-item">${convertedWeight.toFixed(2)} ${unitNames[unit]} <button onclick="copyToClipboard('${convertedWeight.toFixed(2)} ${unitNames[unit]}')">복사</button></div>`;
+            }).join('');
+
+            resultContainer.innerHTML = results;
+        }
+
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                alert('복사되었습니다: ' + text);
+            });
+        }
+
+        function showUnitInfo() {
+            alert('단위 설명 및 변환 공식은 여기에 표시됩니다.');
         }
     </script>
 </body>

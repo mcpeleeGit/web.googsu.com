@@ -18,17 +18,19 @@
 
         .input-group {
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
             gap: 10px;
             margin-bottom: 20px;
         }
 
-        .input-group input {
-            padding: 10px;
-            border: 1px solid #dee2e6;
-            border-radius: 8px;
-            font-size: 16px;
-            width: 100%;
+        .input-group label {
+            flex: 1;
+        }
+
+        .input-group input, .input-group select {
+            flex: 2;
+            padding: 15px;
+            font-size: 18px;
         }
 
         .btn {
@@ -46,11 +48,19 @@
         }
 
         .result {
-            background: #f8f9fa;
-            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .result-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
             border: 1px solid #dee2e6;
             border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            background: #f8f9fa;
         }
     </style>
 </head>
@@ -61,11 +71,8 @@
             <div class="converter-container">
                 <div class="input-group">
                     <label for="lengthInput">길이 입력:</label>
-                    <input type="number" id="lengthInput" placeholder="예: 100">
-                </div>
-                <div class="input-group">
-                    <label for="unitSelect">단위 선택:</label>
-                    <select id="unitSelect">
+                    <input type="number" id="lengthInput" placeholder="예: 100" oninput="convertLength()">
+                    <select id="unitSelect" onchange="convertLength()">
                         <option value="meters">미터</option>
                         <option value="kilometers">킬로미터</option>
                         <option value="centimeters">센티미터</option>
@@ -76,11 +83,10 @@
                         <option value="miles">마일</option>
                     </select>
                 </div>
-                <button class="btn" onclick="convertLength()">변환</button>
                 <div class="result" id="conversionResult">
-                    <h3>결과</h3>
-                    <pre id="resultText">길이를 입력하고 단위를 선택한 후 '변환' 버튼을 클릭하세요.</pre>
+                    <!-- Conversion results will be dynamically inserted here -->
                 </div>
+                <button class="btn" onclick="showUnitInfo()">ℹ️ 단위 설명 보기</button>
             </div>
         </div>
     </div>
@@ -88,46 +94,54 @@
     <script>
         function convertLength() {
             const lengthInput = parseFloat(document.getElementById('lengthInput').value);
-            const unitSelect = document.getElementById('unitSelect').value;
-            const resultText = document.getElementById('resultText');
+            const inputUnit = document.getElementById('unitSelect').value;
+            const resultContainer = document.getElementById('conversionResult');
 
             if (isNaN(lengthInput)) {
-                resultText.textContent = '유효한 길이를 입력하세요.';
+                resultContainer.innerHTML = '<div class="result-item">유효한 길이를 입력하세요.</div>';
                 return;
             }
 
-            // 길이 변환 로직 (예시)
-            let convertedLength;
-            switch (unitSelect) {
-                case 'meters':
-                    convertedLength = lengthInput;
-                    break;
-                case 'kilometers':
-                    convertedLength = lengthInput / 1000;
-                    break;
-                case 'centimeters':
-                    convertedLength = lengthInput * 100;
-                    break;
-                case 'millimeters':
-                    convertedLength = lengthInput * 1000;
-                    break;
-                case 'inches':
-                    convertedLength = lengthInput * 39.3701;
-                    break;
-                case 'feet':
-                    convertedLength = lengthInput * 3.28084;
-                    break;
-                case 'yards':
-                    convertedLength = lengthInput * 1.09361;
-                    break;
-                case 'miles':
-                    convertedLength = lengthInput / 1609.34;
-                    break;
-                default:
-                    convertedLength = lengthInput;
-            }
+            const conversionFactors = {
+                meters: 1,
+                kilometers: 0.001,
+                centimeters: 100,
+                millimeters: 1000,
+                inches: 39.3701,
+                feet: 3.28084,
+                yards: 1.09361,
+                miles: 0.000621371
+            };
 
-            resultText.textContent = `변환된 길이: ${convertedLength.toFixed(2)} ${unitSelect}`;
+            const unitNames = {
+                meters: '미터',
+                kilometers: '킬로미터',
+                centimeters: '센티미터',
+                millimeters: '밀리미터',
+                inches: '인치',
+                feet: '피트',
+                yards: '야드',
+                miles: '마일'
+            };
+
+            const lengthInMeters = lengthInput / conversionFactors[inputUnit];
+
+            const results = Object.keys(conversionFactors).map(unit => {
+                const convertedLength = lengthInMeters * conversionFactors[unit];
+                return `<div class="result-item">${convertedLength.toFixed(2)} ${unitNames[unit]} <button onclick="copyToClipboard('${convertedLength.toFixed(2)} ${unitNames[unit]}')">복사</button></div>`;
+            }).join('');
+
+            resultContainer.innerHTML = results;
+        }
+
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                alert('복사되었습니다: ' + text);
+            });
+        }
+
+        function showUnitInfo() {
+            alert('단위 설명 및 변환 공식은 여기에 표시됩니다.');
         }
     </script>
 </body>
