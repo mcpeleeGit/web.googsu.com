@@ -125,7 +125,7 @@
                 <h2>11. 문의하기</h2>
                 <p>본 개인정보 처리방침에 대한 문의사항이 있으시면 아래의 연락처로 문의해 주시기 바랍니다.</p>
                 <ul>
-                    <li>이메일: privacy@googsu.com</li>
+                    <li>이메일: mcpelee@gmail.com</li>
                 </ul>
             </section>
         </main>
