@@ -76,6 +76,7 @@
                 <div id="cert-algorithm" class="status"></div>
             </div>
         </div>
+        <?php include '../../common/footer.php'; ?>
     </div>
 
     <div id="loading" style="display: none;">로딩 중...</div>

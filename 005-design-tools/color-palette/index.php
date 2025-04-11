@@ -102,6 +102,7 @@
                 <div class="saved-palettes" id="savedPalettes"></div>
             </div>
         </div>
+        <?php include '../../common/footer.php'; ?>
     </div>
 
     <script>

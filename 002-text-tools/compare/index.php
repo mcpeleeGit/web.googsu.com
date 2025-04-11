@@ -148,6 +148,7 @@
                 <div class="result-area" id="result"></div>
             </div>
         </div>
+        <?php include '../../common/footer.php'; ?>
     </div>
     <script>
         function compareTexts() {

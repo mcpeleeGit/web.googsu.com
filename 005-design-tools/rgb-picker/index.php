@@ -106,6 +106,7 @@
                 <div class="recent-colors" id="recentColors"></div>
             </div>
         </div>
+        <?php include '../../common/footer.php'; ?>
     </div>
 
     <script>

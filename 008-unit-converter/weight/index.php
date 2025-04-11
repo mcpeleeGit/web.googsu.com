@@ -87,6 +87,7 @@
                 <button class="btn" onclick="showUnitInfo()">ℹ️ 단위 설명 보기</button>
             </div>
         </div>
+        <?php include '../../common/footer.php'; ?>
     </div>
 
     <script>

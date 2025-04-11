@@ -19,7 +19,7 @@
 
     .container {
         width: 1024px;
-        height: 768px;
+        height: 900px;
         background-color: white;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         border-radius: 8px;
@@ -42,6 +42,16 @@
         right: 0;
         z-index: 10;
     }
+
+    footer {
+        height: 60px;
+        border-bottom: 1px solid #eee;
+        display: flex;
+        align-items: center;
+        padding: 0 20px;
+        background: white;
+        font-size: 0.85em;
+    }    
 
     .content-area {
         flex: 1;

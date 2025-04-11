@@ -158,7 +158,7 @@
                 <i class="fas fa-globe"></i>
                 <span>구글</span>
             </a>
-            <a href="https://www.facebook.com" target="_blank">
+            <a href="/009-developer/facebook" target="_blank">
                 <i class="fas fa-facebook"></i>
                 <span>페이스북</span>
             </a>

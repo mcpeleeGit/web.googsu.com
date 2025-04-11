@@ -162,6 +162,7 @@
                 </div>
             </div>
         </div>
+        <?php include '../../common/footer.php'; ?>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>

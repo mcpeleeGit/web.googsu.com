@@ -184,6 +184,7 @@
                 </div>
             </div>
         </div>
+        <?php include '../../common/footer.php'; ?>
     </div>
     <script>
         // 드래그 앤 드롭 이벤트 처리
