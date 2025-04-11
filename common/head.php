@@ -44,6 +44,7 @@
     }
 
     footer {
+        color: #605C5C; /* 짙은 회색 */
         height: 60px;
         border-bottom: 1px solid #eee;
         display: flex;
@@ -51,7 +52,18 @@
         padding: 0 20px;
         background: white;
         font-size: 0.85em;
-    }    
+    }  
+    
+    footer a {
+        color: #333; /* 링크 색상 */
+        text-decoration: none; /* 밑줄 제거 */
+        transition: color 0.3s ease; /* 색상 전환 효과 */
+    }
+
+    footer a:hover {
+        color: #007bff; /* 호버 시 색상 */
+        text-decoration: underline; /* 호버 시 밑줄 추가 */
+    }  
 
     .content-area {
         flex: 1;
@@ -134,4 +146,5 @@
             margin-left: 5px;
         }
     }
+
 </style> 

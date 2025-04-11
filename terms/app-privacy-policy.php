@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>com.googsu.boardgame 개인정보 처리방침</title>
+    <title>보안 및 개인정보 처리방침</title>
     <style>
         .policy-section {
             margin-bottom: 2rem;
@@ -41,7 +41,7 @@
 <body>
     <div class="container">
         <header>
-            <h1>com.googsu.boardgame 개인정보 처리방침</h1>
+            <h1>보안 및 개인정보 처리방침</h1>
             <p class="last-updated">최종 수정일: 2024년 3월 15일</p>
         </header>
         
@@ -91,6 +91,42 @@
             <section class="policy-section">
                 <h2>6. 개인정보 처리방침의 변경</h2>
                 <p>이 개인정보 처리방침은 시행일로부터 적용되며, 법령 및 방침에 따른 변경내용의 추가, 삭제 및 정정이 있는 경우에는 변경사항의 시행 7일 전부터 공지사항을 통하여 고지할 것입니다.</p>
+            </section>
+
+            <section class="policy-section">
+                <h2>7. 앱 개인정보 수집 및 이용 목적</h2>
+                <p>본 앱은 별도의 개인정보를 수집하거나 이용하지 않습니다. 앱의 기능은 모두 사용자의 기기 내에서 처리되며, 외부 서버와의 통신이나 데이터 저장을 하지 않습니다.</p>
+            </section>
+
+            <section class="policy-section">
+                <h2>8. 앱 권한 사용</h2>
+                <p>본 앱은 다음과 같은 기기 권한을 사용할 수 있습니다:</p>
+                <ul>
+                    <li>인터넷 접근 권한: 앱 업데이트 확인을 위해서만 사용됩니다.</li>
+                </ul>
+            </section>
+
+            <section class="policy-section">
+                <h2>9. 개인정보 보호를 위한 기술적/관리적 조치</h2>
+                <p>본 앱은 개인정보를 수집하지 않지만, 사용자의 데이터 보호를 위해 다음과 같은 조치를 취하고 있습니다:</p>
+                <ul>
+                    <li>모든 데이터 처리는 사용자의 기기 내에서만 이루어집니다.</li>
+                    <li>외부 서버로의 데이터 전송이 없습니다.</li>
+                    <li>앱 업데이트 시에도 사용자 데이터는 유지됩니다.</li>
+                </ul>
+            </section>
+
+            <section class="policy-section">
+                <h2>10. 사용자의 권리</h2>
+                <p>본 앱은 개인정보를 수집하지 않으므로, 별도의 열람, 정정, 삭제 요청이 필요하지 않습니다. 앱 제거 시 관련된 모든 데이터가 자동으로 삭제됩니다.</p>
+            </section>
+
+            <section class="policy-section">
+                <h2>11. 문의하기</h2>
+                <p>본 개인정보 처리방침에 대한 문의사항이 있으시면 아래의 연락처로 문의해 주시기 바랍니다.</p>
+                <ul>
+                    <li>이메일: googsucom@gmail.com</li>
+                </ul>
             </section>
         </main>
     </div>
