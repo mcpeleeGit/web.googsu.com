@@ -16,10 +16,62 @@
     <div class="container">
         <?php include '../../common/menu.php'; ?>
         <div class="content-area">
-            
+            <div id="fb-root"></div>
+            <script>
+            window.fbAsyncInit = function() {
+                FB.init({
+                appId      : '1696849443815546',
+                cookie     : true,
+                xfbml      : true,
+                version    : 'v15.0'
+                });
+                
+                FB.AppEvents.logPageView();   
+                
+            };
+
+            (function(d, s, id){
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) {return;}
+                js = d.createElement(s); js.id = id;
+                js.src = "https://connect.facebook.net/ko_KR/sdk.js";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+            </script>
+
+            <div class="fb-login-button" 
+                data-width="" 
+                data-size="large" 
+                data-button-type="login_with" 
+                data-layout="default" 
+                data-auto-logout-link="false" 
+                data-use-continue-as="false" 
+                onlogin="checkLoginState();"></div>
         </div>
         <?php include '../../common/footer.php'; ?>
     </div>
+
+
+
+    <script>
+      function checkLoginState() {
+        FB.getLoginStatus(function(response) {
+          statusChangeCallback(response);
+        });
+      }
+
+      function statusChangeCallback(response) {
+        if (response.status === 'connected') {
+          console.log('Logged in.');
+          // 사용자 정보 가져오기
+          FB.api('/me', function(response) {
+            console.log('Successful login for: ' + response.name);
+          });
+        } else {
+          console.log('User not authenticated');
+        }
+      }
+    </script>
 
 </body>
 </html> 
