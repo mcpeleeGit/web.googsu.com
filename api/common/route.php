@@ -5,9 +5,8 @@ class Route
     {
         if (Route::isAPI($reqUri)) {
             Route::routeApi($reqUri);
-        } else {
-            Route::routeReact($reqUri);
-        }
+            exit;
+        } 
     }
 
     private static function isAPI($reqUri)

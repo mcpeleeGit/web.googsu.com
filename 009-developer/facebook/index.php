@@ -47,11 +47,55 @@
                 data-auto-logout-link="false" 
                 data-use-continue-as="false" 
                 onlogin="checkLoginState();"></div>
+
+            <!-- Facebook 공유하기 버튼 -->
+            <div class="fb-share-button" 
+                 data-href="https://googsu.com" 
+                 data-layout="button_count">
+            </div>
+
+            <!-- 피드 대화상자 공유 버튼 -->
+            <button onclick="shareToFeed()">페이스북에 공유하기</button>
+
+            <!-- 보내기 대화상자 버튼 -->
+            <button onclick="sendToFriend()">페이스북으로 보내기</button>
+
+            <!-- 좋아요 버튼 -->
+            <div class="fb-like" 
+                 data-href="https://googsu.com" 
+                 data-width="" 
+                 data-layout="standard" 
+                 data-action="like" 
+                 data-size="small" 
+                 data-share="true">
+            </div>
+
+            <!-- 댓글 플러그인 -->
+            <div class="fb-comments" 
+                 data-href="https://googsu.com" 
+                 data-width="100%" 
+                 data-numposts="5">
+            </div>
+
+            <!-- 페이지 플러그인 -->
+            <div class="fb-page" 
+                 data-href="https://www.facebook.com/facebook" 
+                 data-tabs="timeline" 
+                 data-width="" 
+                 data-height="" 
+                 data-small-header="false" 
+                 data-adapt-container-width="true" 
+                 data-hide-cover="false" 
+                 data-show-facepile="true">
+            </div>
+
+            <!-- 저장 버튼 -->
+            <div class="fb-save" 
+                 data-uri="https://googsu.com">
+            </div>
         </div>
         <?php include '../../common/footer.php'; ?>
     </div>
-
-
 
     <script>
       function checkLoginState() {
@@ -70,6 +114,26 @@
         } else {
           console.log('User not authenticated');
         }
+      }
+
+      function shareToFeed() {
+        FB.ui({
+          method: 'share',
+          href: 'https://googsu.com', // 공유할 URL
+        }, function(response){
+          if (response && !response.error_message) {
+            alert('Posting completed.');
+          } else {
+            alert('Error while posting.');
+          }
+        });
+      }
+
+      function sendToFriend() {
+        FB.ui({
+          method: 'send',
+          link: 'https://googsu.com', // 공유할 URL
+        });
       }
     </script>
 
