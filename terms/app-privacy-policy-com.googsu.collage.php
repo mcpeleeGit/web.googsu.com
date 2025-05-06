@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>com.googsu.boardgame 개인정보 처리방침</title>
+    <title>com.googsu.collage 개인정보 처리방침</title>
     <style>
         .policy-section {
             margin-bottom: 2rem;
@@ -41,8 +41,8 @@
 <body>
     <div class="container">
         <header>
-            <h1>com.googsu.boardgame 개인정보 처리방침</h1>
-            <p class="last-updated">최종 수정일: 2024년 3월 15일</p>
+            <h1>com.googsu.collage 개인정보 처리방침</h1>
+            <p class="last-updated">최종 수정일: 2024년 5월 6일</p>
         </header>
         
         <main>
@@ -62,6 +62,7 @@
                 <ul>
                     <li>자동 수집 항목: IP 주소, 브라우저 유형, 접속 시간</li>
                     <li>Google Analytics를 통해 수집되는 웹사이트 사용 정보</li>
+                    <li>*** collage 생성에 사용된 이미지는 파일 형태로 사용자 기기에만 저장되며, 원본 이미지와 생성된 이미지 모두 수집/가공/활용 하지 않습니다.</li>
                 </ul>
             </section>
 
