@@ -393,6 +393,15 @@ Route::init($_SERVER['REQUEST_URI']);
                         <p>네트워크 방화벽 설정을 점검하고 보안 상태를 확인합니다.</p>
                     </div>
                 </a>
+                <a href="/007-security-tools/dns-lookup" class="menu-card">
+                    <div class="icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="text">
+                        <h3>DNS Lookup</h3>
+                        <p>도메인의 DNS 정보를 조회하여 IP 주소, MX 레코드, NS 레코드 등을 확인합니다.</p>
+                    </div>
+                </a>
                 <a href="/005-design-tools/rgb-picker" class="menu-card">
                     <div class="icon">
                         <i class="fas fa-eye-dropper"></i>

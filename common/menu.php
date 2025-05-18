@@ -97,6 +97,10 @@
                 <i class="fas fa-shield-virus"></i>
                 <span>방화벽 체크</span>
             </a>
+            <a href="/007-security-tools/dns-lookup">
+                <i class="fas fa-search"></i>
+                <span>DNS Lookup</span>
+            </a>
         </div>
     </div>
     <div class="dropdown">
