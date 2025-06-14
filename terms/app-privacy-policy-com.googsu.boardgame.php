@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>com.googsu.boardgame 개인정보 처리방침</title>
+    <title>개인정보 처리방침</title>
     <style>
         .policy-section {
             margin-bottom: 2rem;
@@ -41,8 +41,8 @@
 <body>
     <div class="container">
         <header>
-            <h1>com.googsu.boardgame 개인정보 처리방침</h1>
-            <p class="last-updated">최종 수정일: 2024년 3월 15일</p>
+            <h1>개인정보 처리방침</h1>
+            <p class="last-updated">com.googsu.boardgame  최종 수정일: 2025년 6월 14일</p>
         </header>
         
         <main>
