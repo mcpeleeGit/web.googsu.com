@@ -469,6 +469,105 @@ Route::init($_SERVER['REQUEST_URI']);
         </div>
         <?php include 'common/footer.php'; ?>
     </div>
+    <div class="share-container">
+        <button id="shareButton" class="share-button">
+            <i class="fas fa-share-alt"></i>
+            이 페이지 공유하기
+        </button>
+    </div>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const shareButton = document.getElementById('shareButton');
+            
+            // Web Share API 지원 여부 확인
+            if (navigator.share) {
+                shareButton.addEventListener('click', async function() {
+                    try {
+                        await navigator.share({
+                            title: 'googsu.com - 다양한 온라인 도구 모음',
+                            text: '계산기, 변환기, 보안 도구 등 다양한 온라인 도구를 제공하는 googsu.com을 확인해보세요!',
+                            url: window.location.href
+                        });
+                    } catch (error) {
+                        console.log('공유가 취소되었거나 오류가 발생했습니다:', error);
+                    }
+                });
+            } else {
+                // Web Share API를 지원하지 않는 경우 fallback
+                shareButton.addEventListener('click', function() {
+                    const url = encodeURIComponent(window.location.href);
+                    const text = encodeURIComponent('googsu.com - 다양한 온라인 도구 모음');
+                    
+                    // 클립보드에 URL 복사
+                    navigator.clipboard.writeText(window.location.href).then(function() {
+                        alert('페이지 URL이 클립보드에 복사되었습니다!');
+                    }).catch(function() {
+                        // 클립보드 API를 지원하지 않는 경우
+                        const textArea = document.createElement('textarea');
+                        textArea.value = window.location.href;
+                        document.body.appendChild(textArea);
+                        textArea.select();
+                        document.execCommand('copy');
+                        document.body.removeChild(textArea);
+                        alert('페이지 URL이 클립보드에 복사되었습니다!');
+                    });
+                });
+                
+                // 버튼 텍스트 변경
+                shareButton.innerHTML = '<i class="fas fa-copy"></i> URL 복사하기';
+            }
+        });
+    </script>
+
+    <style>
+        .share-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .share-button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 12px 24px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .share-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .share-button:active {
+            transform: translateY(0);
+        }
+
+        .share-button i {
+            font-size: 16px;
+        }
+
+        @media (max-width: 768px) {
+            .share-container {
+                bottom: 15px;
+                right: 15px;
+            }
+            
+            .share-button {
+                padding: 10px 20px;
+                font-size: 13px;
+            }
+        }
+    </style>
 </body>
 </html> 
