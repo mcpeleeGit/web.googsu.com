@@ -145,6 +145,7 @@
             </a>
         </div>
     </div>
+    <!--
     <div class="dropdown">
         <a href="#" class="menu-icon">
             <i class="fas fa-d"></i>
@@ -168,6 +169,7 @@
             </a>
         </div>
     </div>
+    -->
 </div>
 <script>
     // 드롭다운 메뉴 클릭 이벤트 처리
