@@ -191,7 +191,7 @@
         <h3>6.1 연락처</h3>
         <div class="contact-info">
             <p><strong>이메일</strong>: googsucom@gmail.com</p>
-            <p><strong>개발자</strong>: English Friends 개발팀</p>
+            <p><strong>개발자</strong>: 이동하</p>
         </div>
         
         <h2>7. 개인정보 처리방침 변경</h2>
