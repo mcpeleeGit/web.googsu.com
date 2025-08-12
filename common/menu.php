@@ -39,13 +39,7 @@
                 <i class="fas fa-file-code"></i>
                 <span>XML 검증기</span>
             </a>          
-        </div>
-    </div>
-    <div class="dropdown">
-        <a href="#" class="menu-icon">
-            <i class="fas fa-exchange-alt"></i>
-        </a>
-        <div class="dropdown-content">
+       
             <a href="/004-converter/hex-image">
                 <i class="fas fa-image"></i>
                 <span>HEX 이미지 변환기</span>
