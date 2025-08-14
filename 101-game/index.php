@@ -319,6 +319,14 @@ Route::init($_SERVER['REQUEST_URI']);
                     <i class="fas fa-puzzle-piece"></i>
                     <span>숫자 퍼즐</span>
                 </a>
+                <a href="/101-game/multi-tetris" class="game-icon">
+                    <i class="fas fa-users"></i>
+                    <span>멀티 테트리스</span>
+                </a>
+                <a href="/101-game/chess" class="game-icon">
+                    <i class="fas fa-chess"></i>
+                    <span>체스</span>
+                </a>
                 <!-- 추가 게임 아이콘들 -->
             </div>
         </div>
@@ -383,21 +391,22 @@ Route::init($_SERVER['REQUEST_URI']);
             </div>
         </a>
         
-        <div class="game-card">
+        <!-- 멀티플레이어 테트리스 게임 카드 -->
+        <a href="/101-game/multi-tetris" class="game-card">
             <div class="game-card-header">
                 <div class="game-icon-large">
-                    <i class="fas fa-chess"></i>
+                    <i class="fas fa-users"></i>
                 </div>
                 <div class="game-info">
-                    <h3>체스 게임</h3>
-                    <p>전략적 사고가 필요한 체스 게임입니다. AI와 대결해보세요!</p>
+                    <h3>멀티플레이어 테트리스</h3>
+                    <p>최대 2명이 함께 플레이하는 경쟁 테트리스! 같은 공간에서 각자 블록을 조작하며 점수를 겨뤄보세요!</p>
                 </div>
             </div>
             <div class="game-features">
-                <span class="feature-tag">보드게임</span>
-                <span class="feature-tag">전략</span>
-                <span class="feature-tag">AI 대결</span>
                 <span class="feature-tag">멀티플레이어</span>
+                <span class="feature-tag">경쟁</span>
+                <span class="feature-tag">실시간</span>
+                <span class="feature-tag">협동</span>
             </div>
             <div class="game-stats">
                 <div class="difficulty">
@@ -407,9 +416,38 @@ Route::init($_SERVER['REQUEST_URI']);
                     <span class="difficulty-star">⭐</span>
                     <span class="difficulty-star">⭐</span>
                 </div>
-                <button class="coming-soon">준비 중</button>
+                <button class="play-button">게임 시작</button>
             </div>
-        </div>
+        </a>
+        
+        <!-- 체스 게임 카드 -->
+        <a href="/101-game/chess" class="game-card">
+            <div class="game-card-header">
+                <div class="game-icon-large">
+                    <i class="fas fa-chess"></i>
+                </div>
+                <div class="game-info">
+                    <h3>체스 게임</h3>
+                    <p>전략적 사고가 필요한 체스 게임입니다. 모든 체스 규칙이 구현된 완전한 게임을 즐겨보세요!</p>
+                </div>
+            </div>
+            <div class="game-features">
+                <span class="feature-tag">보드게임</span>
+                <span class="feature-tag">전략</span>
+                <span class="feature-tag">체스 규칙</span>
+                <span class="feature-tag">2인 플레이</span>
+            </div>
+            <div class="game-stats">
+                <div class="difficulty">
+                    <span class="difficulty-star">⭐</span>
+                    <span class="difficulty-star">⭐</span>
+                    <span class="difficulty-star">⭐</span>
+                    <span class="difficulty-star">⭐</span>
+                    <span class="difficulty-star">⭐</span>
+                </div>
+                <button class="play-button">게임 시작</button>
+            </div>
+        </a>
         
         <div class="game-card">
             <div class="game-card-header">
