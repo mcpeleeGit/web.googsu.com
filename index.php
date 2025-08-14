@@ -469,6 +469,13 @@ Route::init($_SERVER['REQUEST_URI']);
         </div>
         <?php include 'common/footer.php'; ?>
     </div>
+    <div class="api-home-container">
+        <a href="/201-api" class="api-home-button">
+            <i class="fas fa-code"></i>
+            공공 API 홈으로 이동
+        </a>
+    </div>
+    
     <div class="game-home-container">
         <a href="/101-game" class="game-home-button">
             <i class="fas fa-gamepad"></i>
@@ -528,6 +535,44 @@ Route::init($_SERVER['REQUEST_URI']);
     </script>
 
     <style>
+        .api-home-container {
+            position: fixed;
+            bottom: 140px;
+            right: 20px;
+            z-index: 1000;
+        }
+        
+        .api-home-button {
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            padding: 12px 24px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .api-home-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            color: white;
+            text-decoration: none;
+        }
+        
+        .api-home-button:active {
+            transform: translateY(0);
+        }
+        
+        .api-home-button i {
+            font-size: 16px;
+        }
+        
         .game-home-container {
             position: fixed;
             bottom: 80px;
@@ -603,6 +648,16 @@ Route::init($_SERVER['REQUEST_URI']);
         }
 
         @media (max-width: 768px) {
+            .api-home-container {
+                bottom: 120px;
+                right: 15px;
+            }
+            
+            .api-home-button {
+                padding: 10px 20px;
+                font-size: 13px;
+            }
+            
             .game-home-container {
                 bottom: 70px;
                 right: 15px;
