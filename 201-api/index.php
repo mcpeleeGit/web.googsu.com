@@ -30,7 +30,7 @@ Route::init($_SERVER['REQUEST_URI']);
         
         .api-menu {
             background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
-            padding: 20px 0;
+            padding: 15px 0;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             position: fixed;
             top: 0;
@@ -51,19 +51,19 @@ Route::init($_SERVER['REQUEST_URI']);
         .api-menu-left {
             display: flex;
             align-items: center;
-            gap: 30px;
+            gap: 20px;
         }
         
         .home-link {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
             color: white;
             text-decoration: none;
-            font-size: 1.2em;
+            font-size: 1.1em;
             font-weight: 600;
-            padding: 10px 20px;
-            border-radius: 25px;
+            padding: 8px 16px;
+            border-radius: 20px;
             background: rgba(255, 255, 255, 0.1);
             transition: all 0.3s ease;
         }
@@ -76,33 +76,33 @@ Route::init($_SERVER['REQUEST_URI']);
         }
         
         .home-link i {
-            font-size: 1.4em;
+            font-size: 1.2em;
         }
         
         .api-menu-title {
             color: white;
-            font-size: 1.8em;
+            font-size: 1.6em;
             font-weight: bold;
             margin: 0;
         }
         
         .api-menu-right {
             display: flex;
-            gap: 15px;
+            gap: 12px;
         }
         
         .api-icon {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 5px;
+            gap: 4px;
             color: white;
             text-decoration: none;
-            padding: 15px;
-            border-radius: 15px;
+            padding: 12px;
+            border-radius: 12px;
             background: rgba(255, 255, 255, 0.1);
             transition: all 0.3s ease;
-            min-width: 80px;
+            min-width: 70px;
         }
         
         .api-icon:hover {
@@ -113,11 +113,11 @@ Route::init($_SERVER['REQUEST_URI']);
         }
         
         .api-icon i {
-            font-size: 2em;
+            font-size: 1.8em;
         }
         
         .api-icon span {
-            font-size: 0.8em;
+            font-size: 0.75em;
             font-weight: 500;
         }
         
@@ -128,7 +128,7 @@ Route::init($_SERVER['REQUEST_URI']);
             padding: 40px 20px;
             max-width: 1200px;
             margin: 0 auto;
-            margin-top: 100px;
+            margin-top: 90px;
             width: 100%;
             box-sizing: border-box;
         }
@@ -259,25 +259,77 @@ Route::init($_SERVER['REQUEST_URI']);
         @media (max-width: 768px) {
             .api-menu-container {
                 flex-direction: column;
-                gap: 20px;
+                gap: 15px;
             }
             
             .api-menu-left {
                 flex-direction: column;
-                gap: 15px;
+                gap: 10px;
             }
             
             .api-menu-title {
+                font-size: 1.4em;
+                display: none;
+            }
+            
+            .api-menu-right {
+                gap: 8px;
+            }
+            
+            .api-icon {
+                padding: 8px;
+                min-width: 60px;
+            }
+            
+            .api-icon i {
                 font-size: 1.5em;
+            }
+            
+            .api-icon span {
+                font-size: 0.7em;
             }
             
             .api-cards {
                 grid-template-columns: 1fr;
                 padding: 20px;
+                margin-top: 140px;
             }
             
             .api-card {
                 padding: 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .api-menu {
+                padding: 12px 0;
+            }
+            
+            .api-menu-container {
+                gap: 12px;
+            }
+            
+            .api-menu-title {
+                font-size: 1.3em;
+                display: none;
+            }
+            
+            .api-icon {
+                padding: 6px;
+                min-width: 55px;
+            }
+            
+            .api-icon i {
+                font-size: 1.4em;
+            }
+            
+            .api-icon span {
+                font-size: 0.65em;
+            }
+            
+            .api-cards {
+                margin-top: 150px;
+                padding: 15px;
             }
         }
     </style>
