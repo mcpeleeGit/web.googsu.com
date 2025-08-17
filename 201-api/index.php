@@ -349,9 +349,9 @@ Route::init($_SERVER['REQUEST_URI']);
                     <i class="fas fa-search"></i>
                     <span>다음검색</span>
                 </a>
-                <a href="/api/customer" class="api-icon">
-                    <i class="fas fa-users"></i>
-                    <span>고객</span>
+                <a href="/201-api/data-go-kr" class="api-icon">
+                    <i class="fas fa-database"></i>
+                    <span>공공데이터</span>
                 </a>
                 <a href="/api/kakao" class="api-icon">
                     <i class="fas fa-comment"></i>
@@ -395,21 +395,21 @@ Route::init($_SERVER['REQUEST_URI']);
         </a>
         
         <!-- 고객 관리 API 카드 -->
-        <a href="/api/customer" class="api-card">
+        <a href="/201-api/data-go-kr" class="api-card">
             <div class="api-card-header">
                 <div class="api-icon-large">
-                    <i class="fas fa-users"></i>
+                    <i class="fas fa-database"></i>
                 </div>
                 <div class="api-info">
-                    <h3>고객 관리 API</h3>
-                    <p>고객 정보 관리, 로그인, 회원가입을 위한 API입니다.</p>
+                    <h3>공공데이터 API</h3>
+                    <p>공공데이터 포털에서 제공하는 다양한 공공 데이터 API입니다.</p>
                 </div>
             </div>
             <div class="api-features">
-                <span class="feature-tag">인증</span>
-                <span class="feature-tag">사용자 관리</span>
-                <span class="feature-tag">보안</span>
-                <span class="feature-tag">세션</span>
+                <span class="feature-tag">공공데이터</span>
+                <span class="feature-tag">API</span>
+                <span class="feature-tag">데이터</span>
+                <span class="feature-tag">포털</span>
             </div>
             <div class="api-stats">
                 <div class="difficulty">
