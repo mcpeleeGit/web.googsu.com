@@ -387,6 +387,10 @@ Route::init($_SERVER['REQUEST_URI']);
                     <i class="fas fa-memory"></i>
                     <span>메모리</span>
                 </a>
+                <a href="/101-game/nonograms" class="game-icon">
+                    <i class="fas fa-th"></i>
+                    <span>노노그램</span>
+                </a>
                 <!-- 추가 게임 아이콘들 -->
             </div>
         </div>
@@ -554,6 +558,35 @@ Route::init($_SERVER['REQUEST_URI']);
                 <span class="feature-tag">카드</span>
                 <span class="feature-tag">집중력</span>
                 <span class="feature-tag">난이도 선택</span>
+            </div>
+            <div class="game-stats">
+                <div class="difficulty">
+                    <span class="difficulty-star">⭐</span>
+                    <span class="difficulty-star">⭐</span>
+                    <span class="difficulty-star">⭐</span>
+                    <span class="difficulty-star">⭐</span>
+                    <span class="difficulty-star">⭐</span>
+                </div>
+                <button class="play-button">게임 시작</button>
+            </div>
+        </a>
+        
+        <!-- 노노그램 게임 카드 -->
+        <a href="/101-game/nonograms" class="game-card">
+            <div class="game-card-header">
+                <div class="game-icon-large">
+                    <i class="fas fa-th"></i>
+                </div>
+                <div class="game-info">
+                    <h3>노노그램 게임</h3>
+                    <p>숫자 힌트를 보고 패턴을 찾는 논리 퍼즐 게임입니다. 단계별 난이도로 즐겨보세요!</p>
+                </div>
+            </div>
+            <div class="game-features">
+                <span class="feature-tag">퍼즐</span>
+                <span class="feature-tag">논리</span>
+                <span class="feature-tag">단계별</span>
+                <span class="feature-tag">힌트</span>
             </div>
             <div class="game-stats">
                 <div class="difficulty">
