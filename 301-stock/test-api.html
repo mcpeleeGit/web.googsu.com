@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API 테스트 - Googsu Stock Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .test-section {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .test-button {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        .test-button:hover {
+            background: #5a6fd8;
+        }
+        .result {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 10px 0;
+            white-space: pre-wrap;
+            font-family: monospace;
+            font-size: 12px;
+        }
+        .error {
+            background: #f8d7da;
+            border-color: #f5c6cb;
+            color: #721c24;
+        }
+        .success {
+            background: #d5f4e6;
+            border-color: #c3e6cb;
+            color: #155724;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔧 API 테스트 페이지</h1>
+    <p>Googsu Stock Dashboard API의 동작을 테스트합니다.</p>
+
+    <div class="test-section">
+        <h2>1. 검색 API 테스트</h2>
+        <button class="test-button" onclick="testSearch('삼성')">삼성 검색</button>
+        <button class="test-button" onclick="testSearch('005930')">코드 검색</button>
+        <button class="test-button" onclick="testSearch('없는종목')">없는 종목</button>
+        <div id="searchResult" class="result"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>2. 주가 조회 API 테스트</h2>
+        <button class="test-button" onclick="testPrice('005930')">삼성전자 주가</button>
+        <button class="test-button" onclick="testPrice('000660')">SK하이닉스 주가</button>
+        <button class="test-button" onclick="testPrice('invalid')">잘못된 코드</button>
+        <div id="priceResult" class="result"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>3. 다중 주가 조회 API 테스트</h2>
+        <button class="test-button" onclick="testPrices(['005930', '000660', '035420'])">여러 종목</button>
+        <button class="test-button" onclick="testPrices([])">빈 배열</button>
+        <div id="pricesResult" class="result"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>4. 투자 분석 API 테스트</h2>
+        <button class="test-button" onclick="testAnalysis('005930')">삼성전자 분석</button>
+        <button class="test-button" onclick="testAnalysis('000660')">SK하이닉스 분석</button>
+        <div id="analysisResult" class="result"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>5. API 상태 확인</h2>
+        <button class="test-button" onclick="testApiStatus()">API 상태 확인</button>
+        <div id="statusResult" class="result"></div>
+    </div>
+
+    <script>
+        async function testSearch(query) {
+            const resultDiv = document.getElementById('searchResult');
+            resultDiv.textContent = '검색 중...';
+            resultDiv.className = 'result';
+            
+            try {
+                const response = await fetch(`api/stock-api.php?action=search&query=${encodeURIComponent(query)}`);
+                const result = await response.json();
+                
+                resultDiv.textContent = JSON.stringify(result, null, 2);
+                resultDiv.className = result.success ? 'result success' : 'result error';
+            } catch (error) {
+                resultDiv.textContent = `오류: ${error.message}`;
+                resultDiv.className = 'result error';
+            }
+        }
+
+        async function testPrice(code) {
+            const resultDiv = document.getElementById('priceResult');
+            resultDiv.textContent = '주가 조회 중...';
+            resultDiv.className = 'result';
+            
+            try {
+                const response = await fetch(`api/stock-api.php?action=price&code=${code}`);
+                const result = await response.json();
+                
+                resultDiv.textContent = JSON.stringify(result, null, 2);
+                resultDiv.className = result.success ? 'result success' : 'result error';
+            } catch (error) {
+                resultDiv.textContent = `오류: ${error.message}`;
+                resultDiv.className = 'result error';
+            }
+        }
+
+        async function testPrices(codes) {
+            const resultDiv = document.getElementById('pricesResult');
+            resultDiv.textContent = '다중 주가 조회 중...';
+            resultDiv.className = 'result';
+            
+            try {
+                const response = await fetch(`api/stock-api.php?action=prices&codes=${codes.join(',')}`);
+                const result = await response.json();
+                
+                resultDiv.textContent = JSON.stringify(result, null, 2);
+                resultDiv.className = result.success ? 'result success' : 'result error';
+            } catch (error) {
+                resultDiv.textContent = `오류: ${error.message}`;
+                resultDiv.className = 'result error';
+            }
+        }
+
+        async function testAnalysis(code) {
+            const resultDiv = document.getElementById('analysisResult');
+            resultDiv.textContent = '투자 분석 중...';
+            resultDiv.className = 'result';
+            
+            try {
+                const response = await fetch(`api/stock-api.php?action=analysis&code=${code}`);
+                const result = await response.json();
+                
+                resultDiv.textContent = JSON.stringify(result, null, 2);
+                resultDiv.className = result.success ? 'result success' : 'result error';
+            } catch (error) {
+                resultDiv.textContent = `오류: ${error.message}`;
+                resultDiv.className = 'result error';
+            }
+        }
+
+        async function testApiStatus() {
+            const resultDiv = document.getElementById('statusResult');
+            resultDiv.textContent = 'API 상태 확인 중...';
+            resultDiv.className = 'result';
+            
+            try {
+                const response = await fetch('api/stock-api.php');
+                const result = await response.json();
+                
+                resultDiv.textContent = `HTTP 상태: ${response.status}\n응답: ${JSON.stringify(result, null, 2)}`;
+                resultDiv.className = response.ok ? 'result success' : 'result error';
+            } catch (error) {
+                resultDiv.textContent = `오류: ${error.message}`;
+                resultDiv.className = 'result error';
+            }
+        }
+
+        // 페이지 로드 시 API 상태 확인
+        window.addEventListener('load', () => {
+            testApiStatus();
+        });
+    </script>
+</body>
+</html>
