@@ -629,5 +629,14 @@ Route::init($_SERVER['REQUEST_URI']);
         </div>
     </div>
     
+    <footer style="background: white; padding: 30px 20px; margin-top: 40px; text-align: center; color: #605C5C; border-top: 1px solid #e9ecef;">
+        <p style="margin-bottom: 10px;">&copy; 2024 Googsu Games. All rights reserved.</p>
+        <p style="margin: 0;">
+            <a href="/101-game/privacy-policy.php" style="color: #1971c2; text-decoration: none; margin: 0 10px;">개인정보 처리방침</a>
+            <span style="color: #adb5bd;">|</span>
+            <a href="/terms/terms.php" style="color: #1971c2; text-decoration: none; margin: 0 10px;">서비스 약관</a>
+        </p>
+    </footer>
+    
 </body>
 </html>
