@@ -26,6 +26,8 @@ Route::init($_SERVER['REQUEST_URI']);
             min-height: 100vh;
             margin: 0;
             padding: 0;
+            display: flex;
+            flex-direction: column;
         }
         
         .game-menu {
@@ -131,6 +133,7 @@ Route::init($_SERVER['REQUEST_URI']);
             margin-top: 90px;
             width: 100%;
             box-sizing: border-box;
+            flex: 1;
         }
         
         .game-card {
@@ -629,7 +632,7 @@ Route::init($_SERVER['REQUEST_URI']);
         </div>
     </div>
     
-    <footer style="background: white; padding: 30px 20px; margin-top: 40px; text-align: center; color: #605C5C; border-top: 1px solid #e9ecef;">
+    <footer style="background: white; padding: 30px 20px; margin-top: auto; text-align: center; color: #605C5C; border-top: 1px solid #e9ecef; width: 100%;">
         <p style="margin-bottom: 10px;">&copy; 2024 Googsu Games. All rights reserved.</p>
         <p style="margin: 0;">
             <a href="/101-game/privacy-policy.php" style="color: #1971c2; text-decoration: none; margin: 0 10px;">개인정보 처리방침</a>
